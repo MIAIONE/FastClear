@@ -13,6 +13,7 @@ Public Class Program
     End Sub
     Public Shared Sub Main(args As String())
         On Error Resume Next
+
         AddHandler Application.ThreadException, AddressOf Application_ThreadException
         AddHandler AppDomain.CurrentDomain.UnhandledException, AddressOf CurrentDomain_UnhandledException
         GetToken()

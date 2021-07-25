@@ -129,10 +129,13 @@
     <value>34, 47</value>
   </data>
   <data name="RAM_Size.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 35</value>
+    <value>130, 35</value>
   </data>
   <data name="RAM_Size.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="RAM_Size.Text" xml:space="preserve">
+    <value>内存占用:</value>
   </data>
   <data name="RAM_Size.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -147,7 +150,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;RAM_Size.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <metadata name="RAM_Refresh.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -156,7 +159,7 @@
     <value>微软雅黑, 12pt</value>
   </data>
   <data name="ClearRAMBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>563, 47</value>
+    <value>554, 376</value>
   </data>
   <data name="ClearRAMBtn.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 1</value>
@@ -180,8 +183,48 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ClearRAMBtn.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="CPU_Size.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CPU_Size.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 20pt</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="CPU_Size.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CPU_Size.Location" type="System.Drawing.Point, System.Drawing">
+    <value>34, 82</value>
+  </data>
+  <data name="CPU_Size.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 35</value>
+  </data>
+  <data name="CPU_Size.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="CPU_Size.Text" xml:space="preserve">
+    <value>CPU占用:</value>
+  </data>
+  <data name="CPU_Size.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;CPU_Size.Name" xml:space="preserve">
+    <value>CPU_Size</value>
+  </data>
+  <data name="&gt;&gt;CPU_Size.Type" xml:space="preserve">
+    <value>Sunny.UI.UILabel, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;CPU_Size.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CPU_Size.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="CPU_Refresh.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>147, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -198,6 +241,12 @@
     <value>RAM_Refresh</value>
   </data>
   <data name="&gt;&gt;RAM_Refresh.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CPU_Refresh.Name" xml:space="preserve">
+    <value>CPU_Refresh</value>
+  </data>
+  <data name="&gt;&gt;CPU_Refresh.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

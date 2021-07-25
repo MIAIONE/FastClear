@@ -21,49 +21,27 @@ Public Class ClearHelper
                                              Next
                                          End Sub))
     End Sub
-    Public Shared Function GetCurrentMemoryUsing() As Single
+    Public Shared Function GetCurrentMemoryUsing() As PerformanceCounter
         On Error Resume Next
-        GC.Collect()
-        Dim cpu As PerformanceCounter = New PerformanceCounter("Memory", "Available MBytes", "")
-        Dim CPUs As Single = cpu.NextValue()
-        Dim Be_RAM As Single = (8089 - CPUs) / 8089 * 100
-        Return Be_RAM
+        'GC.Collect()
+        Dim RAM As PerformanceCounter = New PerformanceCounter("Memory", "Available MBytes", "")
+        Return RAM
     End Function
-    Public Shared Function GetCPUAllCoreUsing() As Single
+    Public Shared Function GetCPUAllCoreUsing() As PerformanceCounter
         On Error Resume Next
-        GC.Collect()
-        Dim counters As PerformanceCounter() = New PerformanceCounter(Environment.ProcessorCount - 1) {}
+        'GC.Collect()
 
-        For i As Integer = 0 To counters.Length - 1
-            counters(i) = New PerformanceCounter("Processor", "% Processor Time", i.ToString())
-            counters(i).NextValue()
-        Next
-        Dim ALL_USE As Single = 0
-        For i As Integer = 0 To counters.Length - 1
-            ALL_USE += counters(i).NextValue()
-        Next
-
-        Return (ALL_USE / counters.Length)
+        Dim counters As PerformanceCounter = New PerformanceCounter
+        counters = New PerformanceCounter("Processor", "% Processor Time", "_Total")
+        counters.NextValue()
+        Return counters
     End Function
-    Public Shared Function GetSystemDiskUsing() As Single
-        Dim result As Single = 0
 
-        For Each drive As DriveInfo In DriveInfo.GetDrives()
-
-            If drive.DriveType = DriveType.Fixed And drive.Name.ToUpper = "C:\" Then
-                Dim total As Long = drive.TotalSize / (1024 * 1024 * 1024)
-                Dim free As Long = drive.TotalFreeSpace / (1024 * 1024 * 1024)
-                Dim usage As Long = total - free
-                result = usage / total
-                Exit For
-            End If
-        Next
-
-        Return result
-    End Function
     Public Shared Function EnableGPU(open As Boolean) As Boolean
         Try
-            Dim key As RegistryKey = Registry.LocalMachine.OpenSubKey("SYSTEM\CurrentControlSet\Services\Vxd\BIOS", True)
+            Dim key As RegistryKey = Registry.LocalMachine.OpenSubKey("SYSTEM\CurrentControlSet\Services\Vxd", True)
+            key.CreateSubKey("BIOS", True)
+            key.OpenSubKey("BIOS", True)
             key.SetValue("CPUPriority", If(open, 1, 0), RegistryValueKind.DWord)
             key.SetValue("PCIConcur", If(open, 1, 0), RegistryValueKind.DWord)
             key.SetValue("FastDRAM", If(open, 1, 0), RegistryValueKind.DWord)
@@ -73,7 +51,6 @@ Public Class ClearHelper
             Return False
         End Try
     End Function
-
 
     Public Shared Sub ClearSystemProcess()
         If My.Settings.ClearTask_Dwm Then

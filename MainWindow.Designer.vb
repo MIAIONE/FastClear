@@ -27,6 +27,8 @@ Partial Class MainWindow
         Me.RAM_Size = New Sunny.UI.UILabel()
         Me.RAM_Refresh = New System.Windows.Forms.Timer(Me.components)
         Me.ClearRAMBtn = New Sunny.UI.UIButton()
+        Me.CPU_Size = New Sunny.UI.UILabel()
+        Me.CPU_Refresh = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'RAM_Size
@@ -39,7 +41,7 @@ Partial Class MainWindow
         'RAM_Refresh
         '
         Me.RAM_Refresh.Enabled = True
-        Me.RAM_Refresh.Interval = 1
+        Me.RAM_Refresh.Interval = 800
         '
         'ClearRAMBtn
         '
@@ -51,11 +53,24 @@ Partial Class MainWindow
         Me.ClearRAMBtn.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None
         Me.ClearRAMBtn.Style = Sunny.UI.UIStyle.Custom
         '
+        'CPU_Size
+        '
+        resources.ApplyResources(Me.CPU_Size, "CPU_Size")
+        Me.CPU_Size.ForeColor = System.Drawing.Color.Green
+        Me.CPU_Size.Name = "CPU_Size"
+        Me.CPU_Size.Style = Sunny.UI.UIStyle.Custom
+        '
+        'CPU_Refresh
+        '
+        Me.CPU_Refresh.Enabled = True
+        Me.CPU_Refresh.Interval = 800
+        '
         'MainWindow
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.CPU_Size)
         Me.Controls.Add(Me.ClearRAMBtn)
         Me.Controls.Add(Me.RAM_Size)
         Me.EscClose = True
@@ -76,4 +91,6 @@ Partial Class MainWindow
     Friend WithEvents RAM_Size As UILabel
     Friend WithEvents RAM_Refresh As Windows.Forms.Timer
     Friend WithEvents ClearRAMBtn As UIButton
+    Friend WithEvents CPU_Size As UILabel
+    Friend WithEvents CPU_Refresh As Windows.Forms.Timer
 End Class
