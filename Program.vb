@@ -1,7 +1,22 @@
-﻿Public Class Program
+﻿Imports Version = System.Version
+
+Public Class Program
+    Public Shared Function GetOSVersion() As Version
+        Return Environment.OSVersion.Version
+    End Function
+    Public Shared Sub GetToken() ' 提权操作
+        On Error Resume Next
+        Dim priv As New PrivilegeEnabler(Process.GetCurrentProcess)
+        For privileges As Privilege = 0 To 34
+            priv.EnablePrivilege(privileges)
+        Next
+    End Sub
     Public Shared Sub Main(args As String())
+        On Error Resume Next
         AddHandler Application.ThreadException, AddressOf Application_ThreadException
         AddHandler AppDomain.CurrentDomain.UnhandledException, AddressOf CurrentDomain_UnhandledException
+        GetToken()
+
         If Command().ToLower = "/startservice fastclear_run" Then
             ServiceBase.Run(New ServiceBase() {New ServicesRun.Service})
         Else
