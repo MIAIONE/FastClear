@@ -76,6 +76,10 @@ Public Class ClearHelper
             End If
         Next
     End Sub
+    Public Shared Sub CLearAllNormalDir()
+        On Error Resume Next
+        ClearSystemUpdateTempFiles(ClearConst.APPDATA_LOCAL_TEMP)
+    End Sub
     Public Shared Sub ClearSystemUpdateTempFiles(dir As String)
         On Error Resume Next
         Task.Factory.StartNew(New Action(Sub()
@@ -89,11 +93,15 @@ Public Class ClearHelper
         File.SetAttributes(files, FileAttributes.Normal)
         If Directory.Exists(files) Then
             Parallel.ForEach(Directory.GetFileSystemEntries(files), New Action(Of String)(Sub(f)
-                                                                                              If File.Exists(f) Then
-                                                                                                  File.Delete(f)
-                                                                                              Else
-                                                                                                  DeleteDir(f)
-                                                                                              End If
+                                                                                              Try
+                                                                                                  If File.Exists(f) Then
+                                                                                                      File.Delete(f)
+                                                                                                  Else
+                                                                                                      DeleteDir(f)
+                                                                                                  End If
+                                                                                              Catch fileex As FileNotFoundException
+                                                                                              Catch ex As Exception
+                                                                                              End Try
                                                                                           End Sub))
             Directory.Delete(files)
         End If

@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="RAM_Size.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="RAM_Size.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -150,7 +153,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;RAM_Size.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <metadata name="RAM_Refresh.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -159,7 +162,7 @@
     <value>微软雅黑, 12pt</value>
   </data>
   <data name="ClearRAMBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>554, 376</value>
+    <value>563, 376</value>
   </data>
   <data name="ClearRAMBtn.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 1</value>
@@ -183,8 +186,11 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ClearRAMBtn.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
+  <metadata name="CPU_Size.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="CPU_Size.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -196,7 +202,7 @@
     <value>NoControl</value>
   </data>
   <data name="CPU_Size.Location" type="System.Drawing.Point, System.Drawing">
-    <value>34, 82</value>
+    <value>339, 47</value>
   </data>
   <data name="CPU_Size.Size" type="System.Drawing.Size, System.Drawing">
     <value>131, 35</value>
@@ -220,11 +226,179 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;CPU_Size.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <metadata name="CPU_Refresh.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>147, 17</value>
   </metadata>
+  <data name="Performance_low.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 12pt</value>
+  </data>
+  <data name="Performance_low.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 35</value>
+  </data>
+  <data name="Performance_low.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="Performance_low.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>22, 0, 0, 0</value>
+  </data>
+  <data name="Performance_low.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 25</value>
+  </data>
+  <data name="Performance_low.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="Performance_low.Text" xml:space="preserve">
+    <value>低性能模式</value>
+  </data>
+  <data name="&gt;&gt;Performance_low.Name" xml:space="preserve">
+    <value>Performance_low</value>
+  </data>
+  <data name="&gt;&gt;Performance_low.Type" xml:space="preserve">
+    <value>Sunny.UI.UIRadioButton, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;Performance_low.Parent" xml:space="preserve">
+    <value>UiGroupBox1</value>
+  </data>
+  <data name="&gt;&gt;Performance_low.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="Performance_highest.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 12pt</value>
+  </data>
+  <data name="Performance_highest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 146</value>
+  </data>
+  <data name="Performance_highest.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="Performance_highest.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>22, 0, 0, 0</value>
+  </data>
+  <data name="Performance_highest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 25</value>
+  </data>
+  <data name="Performance_highest.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="Performance_highest.Text" xml:space="preserve">
+    <value>极限性能模式</value>
+  </data>
+  <data name="&gt;&gt;Performance_highest.Name" xml:space="preserve">
+    <value>Performance_highest</value>
+  </data>
+  <data name="&gt;&gt;Performance_highest.Type" xml:space="preserve">
+    <value>Sunny.UI.UIRadioButton, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;Performance_highest.Parent" xml:space="preserve">
+    <value>UiGroupBox1</value>
+  </data>
+  <data name="&gt;&gt;Performance_highest.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Performance_high.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 12pt</value>
+  </data>
+  <data name="Performance_high.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 109</value>
+  </data>
+  <data name="Performance_high.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="Performance_high.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>22, 0, 0, 0</value>
+  </data>
+  <data name="Performance_high.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 25</value>
+  </data>
+  <data name="Performance_high.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="Performance_high.Text" xml:space="preserve">
+    <value>高性能模式</value>
+  </data>
+  <data name="&gt;&gt;Performance_high.Name" xml:space="preserve">
+    <value>Performance_high</value>
+  </data>
+  <data name="&gt;&gt;Performance_high.Type" xml:space="preserve">
+    <value>Sunny.UI.UIRadioButton, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;Performance_high.Parent" xml:space="preserve">
+    <value>UiGroupBox1</value>
+  </data>
+  <data name="&gt;&gt;Performance_high.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Performance_auto.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 12pt</value>
+  </data>
+  <data name="Performance_auto.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 72</value>
+  </data>
+  <data name="Performance_auto.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="Performance_auto.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>22, 0, 0, 0</value>
+  </data>
+  <data name="Performance_auto.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 25</value>
+  </data>
+  <data name="Performance_auto.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="Performance_auto.Text" xml:space="preserve">
+    <value>自动模式</value>
+  </data>
+  <data name="&gt;&gt;Performance_auto.Name" xml:space="preserve">
+    <value>Performance_auto</value>
+  </data>
+  <data name="&gt;&gt;Performance_auto.Type" xml:space="preserve">
+    <value>Sunny.UI.UIRadioButton, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;Performance_auto.Parent" xml:space="preserve">
+    <value>UiGroupBox1</value>
+  </data>
+  <data name="&gt;&gt;Performance_auto.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="UiGroupBox1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 12pt</value>
+  </data>
+  <data name="UiGroupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 171</value>
+  </data>
+  <data name="UiGroupBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="UiGroupBox1.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="UiGroupBox1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 32, 0, 0</value>
+  </data>
+  <data name="UiGroupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 188</value>
+  </data>
+  <data name="UiGroupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="UiGroupBox1.Text" xml:space="preserve">
+    <value>电源模式（PowerCfg）</value>
+  </data>
+  <data name="&gt;&gt;UiGroupBox1.Name" xml:space="preserve">
+    <value>UiGroupBox1</value>
+  </data>
+  <data name="&gt;&gt;UiGroupBox1.Type" xml:space="preserve">
+    <value>Sunny.UI.UIGroupBox, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;UiGroupBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;UiGroupBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

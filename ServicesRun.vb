@@ -83,15 +83,6 @@
             If My.Settings.ClearTempFiles Then
 
             End If
-            If My.Settings.ClearTask_Dwm Then
-
-            End If
-            If My.Settings.ClearTask_Explorer Then
-
-            End If
-            If My.Settings.ClearTask_SearchIndexer Then
-
-            End If
         End Sub
 
         Protected Overrides Sub OnStart(args() As String)
@@ -100,13 +91,13 @@
 
         End Sub
         Protected Overrides Sub OnPause()
-
+            TaskTimer.Enabled = False
         End Sub
         Protected Overrides Sub OnContinue()
-
+            TaskTimer.Enabled = True
         End Sub
         Protected Overrides Sub OnStop()
-
+            TaskTimer.Enabled = False
         End Sub
         Protected Overrides Function OnPowerEvent(powerStatus As PowerBroadcastStatus) As Boolean
             Return True
