@@ -129,7 +129,7 @@
     <value>微软雅黑, 20pt</value>
   </data>
   <data name="RAM_Size.Location" type="System.Drawing.Point, System.Drawing">
-    <value>34, 47</value>
+    <value>13, 32</value>
   </data>
   <data name="RAM_Size.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 35</value>
@@ -150,43 +150,46 @@
     <value>Sunny.UI.UILabel, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;RAM_Size.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>pcg_set</value>
   </data>
   <data name="&gt;&gt;RAM_Size.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>0</value>
   </data>
   <metadata name="RAM_Refresh.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="ClearRAMBtn.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 12pt</value>
+  <metadata name="SetAppdefineClearing.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="SetAppdefineClearing.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
   </data>
-  <data name="ClearRAMBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>563, 376</value>
+  <data name="SetAppdefineClearing.Location" type="System.Drawing.Point, System.Drawing">
+    <value>243, 107</value>
   </data>
-  <data name="ClearRAMBtn.MinimumSize" type="System.Drawing.Size, System.Drawing">
+  <data name="SetAppdefineClearing.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 1</value>
   </data>
-  <data name="ClearRAMBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 35</value>
+  <data name="SetAppdefineClearing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>218, 31</value>
   </data>
-  <data name="ClearRAMBtn.TabIndex" type="System.Int32, mscorlib">
+  <data name="SetAppdefineClearing.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="ClearRAMBtn.Text" xml:space="preserve">
-    <value>清理内存</value>
+  <data name="SetAppdefineClearing.Text" xml:space="preserve">
+    <value>立即应用当前设置到服务</value>
   </data>
-  <data name="&gt;&gt;ClearRAMBtn.Name" xml:space="preserve">
-    <value>ClearRAMBtn</value>
+  <data name="&gt;&gt;SetAppdefineClearing.Name" xml:space="preserve">
+    <value>SetAppdefineClearing</value>
   </data>
-  <data name="&gt;&gt;ClearRAMBtn.Type" xml:space="preserve">
+  <data name="&gt;&gt;SetAppdefineClearing.Type" xml:space="preserve">
     <value>Sunny.UI.UIButton, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;ClearRAMBtn.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;SetAppdefineClearing.Parent" xml:space="preserve">
+    <value>pcg_settings</value>
   </data>
-  <data name="&gt;&gt;ClearRAMBtn.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;SetAppdefineClearing.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <metadata name="CPU_Size.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -202,7 +205,7 @@
     <value>NoControl</value>
   </data>
   <data name="CPU_Size.Location" type="System.Drawing.Point, System.Drawing">
-    <value>339, 47</value>
+    <value>335, 32</value>
   </data>
   <data name="CPU_Size.Size" type="System.Drawing.Size, System.Drawing">
     <value>131, 35</value>
@@ -223,7 +226,7 @@
     <value>Sunny.UI.UILabel, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;CPU_Size.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>pcg_set</value>
   </data>
   <data name="&gt;&gt;CPU_Size.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -231,8 +234,11 @@
   <metadata name="CPU_Refresh.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>147, 17</value>
   </metadata>
+  <metadata name="Performance_low.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="Performance_low.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 12pt</value>
+    <value>微软雅黑, 10pt</value>
   </data>
   <data name="Performance_low.Location" type="System.Drawing.Point, System.Drawing">
     <value>21, 35</value>
@@ -244,7 +250,7 @@
     <value>22, 0, 0, 0</value>
   </data>
   <data name="Performance_low.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 25</value>
+    <value>149, 25</value>
   </data>
   <data name="Performance_low.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -259,13 +265,19 @@
     <value>Sunny.UI.UIRadioButton, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;Performance_low.Parent" xml:space="preserve">
-    <value>UiGroupBox1</value>
+    <value>pcg_cfg</value>
   </data>
   <data name="&gt;&gt;Performance_low.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <metadata name="pcg_cfg.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Performance_highest.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="Performance_highest.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 12pt</value>
+    <value>微软雅黑, 10pt</value>
   </data>
   <data name="Performance_highest.Location" type="System.Drawing.Point, System.Drawing">
     <value>21, 146</value>
@@ -292,13 +304,16 @@
     <value>Sunny.UI.UIRadioButton, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;Performance_highest.Parent" xml:space="preserve">
-    <value>UiGroupBox1</value>
+    <value>pcg_cfg</value>
   </data>
   <data name="&gt;&gt;Performance_highest.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="Performance_high.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="Performance_high.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 12pt</value>
+    <value>微软雅黑, 10pt</value>
   </data>
   <data name="Performance_high.Location" type="System.Drawing.Point, System.Drawing">
     <value>21, 109</value>
@@ -325,13 +340,16 @@
     <value>Sunny.UI.UIRadioButton, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;Performance_high.Parent" xml:space="preserve">
-    <value>UiGroupBox1</value>
+    <value>pcg_cfg</value>
   </data>
   <data name="&gt;&gt;Performance_high.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <metadata name="Performance_auto.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="Performance_auto.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 12pt</value>
+    <value>微软雅黑, 10pt</value>
   </data>
   <data name="Performance_auto.Location" type="System.Drawing.Point, System.Drawing">
     <value>21, 72</value>
@@ -358,55 +376,1243 @@
     <value>Sunny.UI.UIRadioButton, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;Performance_auto.Parent" xml:space="preserve">
-    <value>UiGroupBox1</value>
+    <value>pcg_cfg</value>
   </data>
   <data name="&gt;&gt;Performance_auto.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="UiGroupBox1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 12pt</value>
+  <data name="pcg_cfg.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
   </data>
-  <data name="UiGroupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 171</value>
+  <data name="pcg_cfg.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 127</value>
   </data>
-  <data name="UiGroupBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="pcg_cfg.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
   </data>
-  <data name="UiGroupBox1.MinimumSize" type="System.Drawing.Size, System.Drawing">
+  <data name="pcg_cfg.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 1</value>
   </data>
-  <data name="UiGroupBox1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="pcg_cfg.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 32, 0, 0</value>
   </data>
-  <data name="UiGroupBox1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="pcg_cfg.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 188</value>
   </data>
-  <data name="UiGroupBox1.TabIndex" type="System.Int32, mscorlib">
+  <data name="pcg_cfg.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="UiGroupBox1.Text" xml:space="preserve">
+  <data name="pcg_cfg.Text" xml:space="preserve">
     <value>电源模式（PowerCfg）</value>
   </data>
-  <data name="&gt;&gt;UiGroupBox1.Name" xml:space="preserve">
-    <value>UiGroupBox1</value>
+  <data name="&gt;&gt;pcg_cfg.Name" xml:space="preserve">
+    <value>pcg_cfg</value>
   </data>
-  <data name="&gt;&gt;UiGroupBox1.Type" xml:space="preserve">
+  <data name="&gt;&gt;pcg_cfg.Type" xml:space="preserve">
     <value>Sunny.UI.UIGroupBox, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;UiGroupBox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;pcg_cfg.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;UiGroupBox1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;pcg_cfg.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <metadata name="pcg_settings.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="SetAutoTime.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="SetAutoTime.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="SetAutoTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>373, 66</value>
+  </data>
+  <data name="SetAutoTime.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="SetAutoTime.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="SetAutoTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 29</value>
+  </data>
+  <data name="SetAutoTime.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="SetAutoTime.Text" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="&gt;&gt;SetAutoTime.Name" xml:space="preserve">
+    <value>SetAutoTime</value>
+  </data>
+  <data name="&gt;&gt;SetAutoTime.Type" xml:space="preserve">
+    <value>Sunny.UI.UITextBox, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;SetAutoTime.Parent" xml:space="preserve">
+    <value>pcg_settings</value>
+  </data>
+  <data name="&gt;&gt;SetAutoTime.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <metadata name="Auto_Time_lable.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Auto_Time_lable.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Auto_Time_lable.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="Auto_Time_lable.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Auto_Time_lable.Location" type="System.Drawing.Point, System.Drawing">
+    <value>239, 70</value>
+  </data>
+  <data name="Auto_Time_lable.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 20</value>
+  </data>
+  <data name="Auto_Time_lable.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="Auto_Time_lable.Text" xml:space="preserve">
+    <value>自动执行间隔(s):</value>
+  </data>
+  <data name="Auto_Time_lable.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;Auto_Time_lable.Name" xml:space="preserve">
+    <value>Auto_Time_lable</value>
+  </data>
+  <data name="&gt;&gt;Auto_Time_lable.Type" xml:space="preserve">
+    <value>Sunny.UI.UILabel, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;Auto_Time_lable.Parent" xml:space="preserve">
+    <value>pcg_settings</value>
+  </data>
+  <data name="&gt;&gt;Auto_Time_lable.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="SetVirtualRAMCheckBtn.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="SetVirtualRAMCheckBtn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="SetVirtualRAMCheckBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>243, 35</value>
+  </data>
+  <data name="SetVirtualRAMCheckBtn.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="SetVirtualRAMCheckBtn.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>22, 0, 0, 0</value>
+  </data>
+  <data name="SetVirtualRAMCheckBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 25</value>
+  </data>
+  <data name="SetVirtualRAMCheckBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="SetVirtualRAMCheckBtn.Text" xml:space="preserve">
+    <value>自定义虚拟内存大小</value>
+  </data>
+  <data name="&gt;&gt;SetVirtualRAMCheckBtn.Name" xml:space="preserve">
+    <value>SetVirtualRAMCheckBtn</value>
+  </data>
+  <data name="&gt;&gt;SetVirtualRAMCheckBtn.Type" xml:space="preserve">
+    <value>Sunny.UI.UICheckBox, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;SetVirtualRAMCheckBtn.Parent" xml:space="preserve">
+    <value>pcg_settings</value>
+  </data>
+  <data name="&gt;&gt;SetVirtualRAMCheckBtn.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="VirtualRAM_MAX_SIZE.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="VirtualRAM_MAX_SIZE.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="VirtualRAM_MAX_SIZE.Location" type="System.Drawing.Point, System.Drawing">
+    <value>360, 146</value>
+  </data>
+  <data name="VirtualRAM_MAX_SIZE.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="VirtualRAM_MAX_SIZE.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="VirtualRAM_MAX_SIZE.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 29</value>
+  </data>
+  <data name="VirtualRAM_MAX_SIZE.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="VirtualRAM_MAX_SIZE.Text" xml:space="preserve">
+    <value>12288</value>
+  </data>
+  <data name="&gt;&gt;VirtualRAM_MAX_SIZE.Name" xml:space="preserve">
+    <value>VirtualRAM_MAX_SIZE</value>
+  </data>
+  <data name="&gt;&gt;VirtualRAM_MAX_SIZE.Type" xml:space="preserve">
+    <value>Sunny.UI.UITextBox, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;VirtualRAM_MAX_SIZE.Parent" xml:space="preserve">
+    <value>pcg_settings</value>
+  </data>
+  <data name="&gt;&gt;VirtualRAM_MAX_SIZE.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="LABLE_MAX.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="LABLE_MAX.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LABLE_MAX.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="LABLE_MAX.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LABLE_MAX.Location" type="System.Drawing.Point, System.Drawing">
+    <value>239, 150</value>
+  </data>
+  <data name="LABLE_MAX.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 20</value>
+  </data>
+  <data name="LABLE_MAX.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="LABLE_MAX.Text" xml:space="preserve">
+    <value>最大大小(MB):</value>
+  </data>
+  <data name="LABLE_MAX.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;LABLE_MAX.Name" xml:space="preserve">
+    <value>LABLE_MAX</value>
+  </data>
+  <data name="&gt;&gt;LABLE_MAX.Type" xml:space="preserve">
+    <value>Sunny.UI.UILabel, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;LABLE_MAX.Parent" xml:space="preserve">
+    <value>pcg_settings</value>
+  </data>
+  <data name="&gt;&gt;LABLE_MAX.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <metadata name="LABLE_MIN.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="LABLE_MIN.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LABLE_MIN.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="LABLE_MIN.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 150</value>
+  </data>
+  <data name="LABLE_MIN.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 20</value>
+  </data>
+  <data name="LABLE_MIN.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="LABLE_MIN.Text" xml:space="preserve">
+    <value>最小大小(MB):</value>
+  </data>
+  <data name="LABLE_MIN.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;LABLE_MIN.Name" xml:space="preserve">
+    <value>LABLE_MIN</value>
+  </data>
+  <data name="&gt;&gt;LABLE_MIN.Type" xml:space="preserve">
+    <value>Sunny.UI.UILabel, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;LABLE_MIN.Parent" xml:space="preserve">
+    <value>pcg_settings</value>
+  </data>
+  <data name="&gt;&gt;LABLE_MIN.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <metadata name="VirtualRAM_MIN_SIZE.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="VirtualRAM_MIN_SIZE.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="VirtualRAM_MIN_SIZE.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 146</value>
+  </data>
+  <data name="VirtualRAM_MIN_SIZE.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="VirtualRAM_MIN_SIZE.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="VirtualRAM_MIN_SIZE.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 29</value>
+  </data>
+  <data name="VirtualRAM_MIN_SIZE.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="VirtualRAM_MIN_SIZE.Text" xml:space="preserve">
+    <value>1024</value>
+  </data>
+  <data name="&gt;&gt;VirtualRAM_MIN_SIZE.Name" xml:space="preserve">
+    <value>VirtualRAM_MIN_SIZE</value>
+  </data>
+  <data name="&gt;&gt;VirtualRAM_MIN_SIZE.Type" xml:space="preserve">
+    <value>Sunny.UI.UITextBox, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;VirtualRAM_MIN_SIZE.Parent" xml:space="preserve">
+    <value>pcg_settings</value>
+  </data>
+  <data name="&gt;&gt;VirtualRAM_MIN_SIZE.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <metadata name="UseVirtualMemoryCheckBtn.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="UseVirtualMemoryCheckBtn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="UseVirtualMemoryCheckBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 97</value>
+  </data>
+  <data name="UseVirtualMemoryCheckBtn.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="UseVirtualMemoryCheckBtn.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>22, 0, 0, 0</value>
+  </data>
+  <data name="UseVirtualMemoryCheckBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 25</value>
+  </data>
+  <data name="UseVirtualMemoryCheckBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="UseVirtualMemoryCheckBtn.Text" xml:space="preserve">
+    <value>优先使用虚拟内存</value>
+  </data>
+  <data name="&gt;&gt;UseVirtualMemoryCheckBtn.Name" xml:space="preserve">
+    <value>UseVirtualMemoryCheckBtn</value>
+  </data>
+  <data name="&gt;&gt;UseVirtualMemoryCheckBtn.Type" xml:space="preserve">
+    <value>Sunny.UI.UICheckBox, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;UseVirtualMemoryCheckBtn.Parent" xml:space="preserve">
+    <value>pcg_settings</value>
+  </data>
+  <data name="&gt;&gt;UseVirtualMemoryCheckBtn.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <metadata name="ClearLoopMemoryCheckBtn.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ClearLoopMemoryCheckBtn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="ClearLoopMemoryCheckBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 66</value>
+  </data>
+  <data name="ClearLoopMemoryCheckBtn.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="ClearLoopMemoryCheckBtn.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>22, 0, 0, 0</value>
+  </data>
+  <data name="ClearLoopMemoryCheckBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 25</value>
+  </data>
+  <data name="ClearLoopMemoryCheckBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="ClearLoopMemoryCheckBtn.Text" xml:space="preserve">
+    <value>循环清理内存</value>
+  </data>
+  <data name="&gt;&gt;ClearLoopMemoryCheckBtn.Name" xml:space="preserve">
+    <value>ClearLoopMemoryCheckBtn</value>
+  </data>
+  <data name="&gt;&gt;ClearLoopMemoryCheckBtn.Type" xml:space="preserve">
+    <value>Sunny.UI.UICheckBox, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ClearLoopMemoryCheckBtn.Parent" xml:space="preserve">
+    <value>pcg_settings</value>
+  </data>
+  <data name="&gt;&gt;ClearLoopMemoryCheckBtn.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <metadata name="EnableGlobalGPUCheckBth.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="EnableGlobalGPUCheckBth.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="EnableGlobalGPUCheckBth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 35</value>
+  </data>
+  <data name="EnableGlobalGPUCheckBth.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="EnableGlobalGPUCheckBth.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>22, 0, 0, 0</value>
+  </data>
+  <data name="EnableGlobalGPUCheckBth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 25</value>
+  </data>
+  <data name="EnableGlobalGPUCheckBth.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="EnableGlobalGPUCheckBth.Text" xml:space="preserve">
+    <value>全局硬件加速</value>
+  </data>
+  <data name="&gt;&gt;EnableGlobalGPUCheckBth.Name" xml:space="preserve">
+    <value>EnableGlobalGPUCheckBth</value>
+  </data>
+  <data name="&gt;&gt;EnableGlobalGPUCheckBth.Type" xml:space="preserve">
+    <value>Sunny.UI.UICheckBox, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EnableGlobalGPUCheckBth.Parent" xml:space="preserve">
+    <value>pcg_settings</value>
+  </data>
+  <data name="&gt;&gt;EnableGlobalGPUCheckBth.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="pcg_settings.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="pcg_settings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>202, 127</value>
+  </data>
+  <data name="pcg_settings.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="pcg_settings.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="pcg_settings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 32, 0, 0</value>
+  </data>
+  <data name="pcg_settings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>488, 188</value>
+  </data>
+  <data name="pcg_settings.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="pcg_settings.Text" xml:space="preserve">
+    <value>性能选项-仅在启动后台优化服务后有效（PerfSetting）</value>
+  </data>
+  <data name="&gt;&gt;pcg_settings.Name" xml:space="preserve">
+    <value>pcg_settings</value>
+  </data>
+  <data name="&gt;&gt;pcg_settings.Type" xml:space="preserve">
+    <value>Sunny.UI.UIGroupBox, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;pcg_settings.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pcg_settings.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <metadata name="pcg_set.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="pcg_set.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="pcg_set.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 40</value>
+  </data>
+  <data name="pcg_set.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="pcg_set.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="pcg_set.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 32, 0, 0</value>
+  </data>
+  <data name="pcg_set.Size" type="System.Drawing.Size, System.Drawing">
+    <value>686, 77</value>
+  </data>
+  <data name="pcg_set.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="pcg_set.Text" xml:space="preserve">
+    <value>资源占用（ResWorkSet）</value>
+  </data>
+  <data name="&gt;&gt;pcg_set.Name" xml:space="preserve">
+    <value>pcg_set</value>
+  </data>
+  <data name="&gt;&gt;pcg_set.Type" xml:space="preserve">
+    <value>Sunny.UI.UIGroupBox, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;pcg_set.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pcg_set.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="UiTextBox1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 12pt</value>
+  </data>
+  <data name="UiTextBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>105, 142</value>
+  </data>
+  <data name="UiTextBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="UiTextBox1.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="UiTextBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 29</value>
+  </data>
+  <data name="UiTextBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="UiTextBox1.Text" xml:space="preserve">
+    <value>1024</value>
+  </data>
+  <data name="&gt;&gt;UiTextBox1.Name" xml:space="preserve">
+    <value>UiTextBox1</value>
+  </data>
+  <data name="&gt;&gt;UiTextBox1.Type" xml:space="preserve">
+    <value>Sunny.UI.UITextBox, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="UiTextBox2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 12pt</value>
+  </data>
+  <data name="UiTextBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>330, 142</value>
+  </data>
+  <data name="UiTextBox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="UiTextBox2.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="UiTextBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 29</value>
+  </data>
+  <data name="UiTextBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="UiTextBox2.Text" xml:space="preserve">
+    <value>1024</value>
+  </data>
+  <data name="&gt;&gt;UiTextBox2.Name" xml:space="preserve">
+    <value>UiTextBox2</value>
+  </data>
+  <data name="&gt;&gt;UiTextBox2.Type" xml:space="preserve">
+    <value>Sunny.UI.UITextBox, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <metadata name="DISM_CLEAR_CheckBtn.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="DISM_CLEAR_CheckBtn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="DISM_CLEAR_CheckBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 35</value>
+  </data>
+  <data name="DISM_CLEAR_CheckBtn.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="DISM_CLEAR_CheckBtn.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>22, 0, 0, 0</value>
+  </data>
+  <data name="DISM_CLEAR_CheckBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 25</value>
+  </data>
+  <data name="DISM_CLEAR_CheckBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="DISM_CLEAR_CheckBtn.Text" xml:space="preserve">
+    <value>清理系统更新</value>
+  </data>
+  <data name="&gt;&gt;DISM_CLEAR_CheckBtn.Name" xml:space="preserve">
+    <value>DISM_CLEAR_CheckBtn</value>
+  </data>
+  <data name="&gt;&gt;DISM_CLEAR_CheckBtn.Type" xml:space="preserve">
+    <value>Sunny.UI.UICheckBox, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;DISM_CLEAR_CheckBtn.Parent" xml:space="preserve">
+    <value>ManualMode_pcfg</value>
+  </data>
+  <data name="&gt;&gt;DISM_CLEAR_CheckBtn.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <metadata name="ManualMode_pcfg.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="SetMeProtect.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="SetMeProtect.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="SetMeProtect.Location" type="System.Drawing.Point, System.Drawing">
+    <value>487, 66</value>
+  </data>
+  <data name="SetMeProtect.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="SetMeProtect.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>22, 0, 0, 0</value>
+  </data>
+  <data name="SetMeProtect.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 25</value>
+  </data>
+  <data name="SetMeProtect.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="SetMeProtect.Text" xml:space="preserve">
+    <value>设置服务为系统关键进程</value>
+  </data>
+  <data name="&gt;&gt;SetMeProtect.Name" xml:space="preserve">
+    <value>SetMeProtect</value>
+  </data>
+  <data name="&gt;&gt;SetMeProtect.Type" xml:space="preserve">
+    <value>Sunny.UI.UICheckBox, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;SetMeProtect.Parent" xml:space="preserve">
+    <value>ManualMode_pcfg</value>
+  </data>
+  <data name="&gt;&gt;SetMeProtect.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="RestartSysProc.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="RestartSysProc.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="RestartSysProc.Location" type="System.Drawing.Point, System.Drawing">
+    <value>487, 97</value>
+  </data>
+  <data name="RestartSysProc.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="RestartSysProc.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>22, 0, 0, 0</value>
+  </data>
+  <data name="RestartSysProc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 25</value>
+  </data>
+  <data name="RestartSysProc.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="RestartSysProc.Text" xml:space="preserve">
+    <value>重启系统进程</value>
+  </data>
+  <data name="&gt;&gt;RestartSysProc.Name" xml:space="preserve">
+    <value>RestartSysProc</value>
+  </data>
+  <data name="&gt;&gt;RestartSysProc.Type" xml:space="preserve">
+    <value>Sunny.UI.UICheckBox, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;RestartSysProc.Parent" xml:space="preserve">
+    <value>ManualMode_pcfg</value>
+  </data>
+  <data name="&gt;&gt;RestartSysProc.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="ApplyForeCtrlBtn.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ApplyForeCtrlBtn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="ApplyForeCtrlBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>487, 128</value>
+  </data>
+  <data name="ApplyForeCtrlBtn.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="ApplyForeCtrlBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 25</value>
+  </data>
+  <data name="ApplyForeCtrlBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="ApplyForeCtrlBtn.Text" xml:space="preserve">
+    <value>应用优化并保存设置</value>
+  </data>
+  <data name="&gt;&gt;ApplyForeCtrlBtn.Name" xml:space="preserve">
+    <value>ApplyForeCtrlBtn</value>
+  </data>
+  <data name="&gt;&gt;ApplyForeCtrlBtn.Type" xml:space="preserve">
+    <value>Sunny.UI.UIButton, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ApplyForeCtrlBtn.Parent" xml:space="preserve">
+    <value>ManualMode_pcfg</value>
+  </data>
+  <data name="&gt;&gt;ApplyForeCtrlBtn.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="MyClearSrv.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="MyClearSrv.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="MyClearSrv.Location" type="System.Drawing.Point, System.Drawing">
+    <value>487, 35</value>
+  </data>
+  <data name="MyClearSrv.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="MyClearSrv.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>22, 0, 0, 0</value>
+  </data>
+  <data name="MyClearSrv.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 25</value>
+  </data>
+  <data name="MyClearSrv.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="MyClearSrv.Text" xml:space="preserve">
+    <value>启动后台优化服务</value>
+  </data>
+  <data name="&gt;&gt;MyClearSrv.Name" xml:space="preserve">
+    <value>MyClearSrv</value>
+  </data>
+  <data name="&gt;&gt;MyClearSrv.Type" xml:space="preserve">
+    <value>Sunny.UI.UICheckBox, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;MyClearSrv.Parent" xml:space="preserve">
+    <value>ManualMode_pcfg</value>
+  </data>
+  <data name="&gt;&gt;MyClearSrv.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="HiberSleep.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="HiberSleep.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="HiberSleep.Location" type="System.Drawing.Point, System.Drawing">
+    <value>269, 128</value>
+  </data>
+  <data name="HiberSleep.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="HiberSleep.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>22, 0, 0, 0</value>
+  </data>
+  <data name="HiberSleep.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 25</value>
+  </data>
+  <data name="HiberSleep.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="HiberSleep.Text" xml:space="preserve">
+    <value>关闭系统休眠</value>
+  </data>
+  <data name="&gt;&gt;HiberSleep.Name" xml:space="preserve">
+    <value>HiberSleep</value>
+  </data>
+  <data name="&gt;&gt;HiberSleep.Type" xml:space="preserve">
+    <value>Sunny.UI.UICheckBox, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;HiberSleep.Parent" xml:space="preserve">
+    <value>ManualMode_pcfg</value>
+  </data>
+  <data name="&gt;&gt;HiberSleep.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <metadata name="Fastboot.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Fastboot.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="Fastboot.Location" type="System.Drawing.Point, System.Drawing">
+    <value>269, 97</value>
+  </data>
+  <data name="Fastboot.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="Fastboot.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>22, 0, 0, 0</value>
+  </data>
+  <data name="Fastboot.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 25</value>
+  </data>
+  <data name="Fastboot.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="Fastboot.Text" xml:space="preserve">
+    <value>开启快速启动</value>
+  </data>
+  <data name="&gt;&gt;Fastboot.Name" xml:space="preserve">
+    <value>Fastboot</value>
+  </data>
+  <data name="&gt;&gt;Fastboot.Type" xml:space="preserve">
+    <value>Sunny.UI.UICheckBox, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;Fastboot.Parent" xml:space="preserve">
+    <value>ManualMode_pcfg</value>
+  </data>
+  <data name="&gt;&gt;Fastboot.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <metadata name="SrvListControl.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="SrvListControl.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="SrvListControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>269, 66</value>
+  </data>
+  <data name="SrvListControl.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="SrvListControl.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>22, 0, 0, 0</value>
+  </data>
+  <data name="SrvListControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 25</value>
+  </data>
+  <data name="SrvListControl.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="SrvListControl.Text" xml:space="preserve">
+    <value>优化服务列表</value>
+  </data>
+  <data name="&gt;&gt;SrvListControl.Name" xml:space="preserve">
+    <value>SrvListControl</value>
+  </data>
+  <data name="&gt;&gt;SrvListControl.Type" xml:space="preserve">
+    <value>Sunny.UI.UICheckBox, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;SrvListControl.Parent" xml:space="preserve">
+    <value>ManualMode_pcfg</value>
+  </data>
+  <data name="&gt;&gt;SrvListControl.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <metadata name="RegClear.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="RegClear.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="RegClear.Location" type="System.Drawing.Point, System.Drawing">
+    <value>269, 35</value>
+  </data>
+  <data name="RegClear.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="RegClear.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>22, 0, 0, 0</value>
+  </data>
+  <data name="RegClear.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 25</value>
+  </data>
+  <data name="RegClear.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="RegClear.Text" xml:space="preserve">
+    <value>优化注册表性能设置</value>
+  </data>
+  <data name="&gt;&gt;RegClear.Name" xml:space="preserve">
+    <value>RegClear</value>
+  </data>
+  <data name="&gt;&gt;RegClear.Type" xml:space="preserve">
+    <value>Sunny.UI.UICheckBox, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;RegClear.Parent" xml:space="preserve">
+    <value>ManualMode_pcfg</value>
+  </data>
+  <data name="&gt;&gt;RegClear.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <metadata name="DeletedOldWindowsCheckBtn.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="DeletedOldWindowsCheckBtn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="DeletedOldWindowsCheckBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 128</value>
+  </data>
+  <data name="DeletedOldWindowsCheckBtn.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="DeletedOldWindowsCheckBtn.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>22, 0, 0, 0</value>
+  </data>
+  <data name="DeletedOldWindowsCheckBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 25</value>
+  </data>
+  <data name="DeletedOldWindowsCheckBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="DeletedOldWindowsCheckBtn.Text" xml:space="preserve">
+    <value>清理过去的Windows版本</value>
+  </data>
+  <data name="&gt;&gt;DeletedOldWindowsCheckBtn.Name" xml:space="preserve">
+    <value>DeletedOldWindowsCheckBtn</value>
+  </data>
+  <data name="&gt;&gt;DeletedOldWindowsCheckBtn.Type" xml:space="preserve">
+    <value>Sunny.UI.UICheckBox, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;DeletedOldWindowsCheckBtn.Parent" xml:space="preserve">
+    <value>ManualMode_pcfg</value>
+  </data>
+  <data name="&gt;&gt;DeletedOldWindowsCheckBtn.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <metadata name="DeletedWindowsBT_WS_CheckBtn.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="DeletedWindowsBT_WS_CheckBtn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="DeletedWindowsBT_WS_CheckBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 97</value>
+  </data>
+  <data name="DeletedWindowsBT_WS_CheckBtn.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="DeletedWindowsBT_WS_CheckBtn.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>22, 0, 0, 0</value>
+  </data>
+  <data name="DeletedWindowsBT_WS_CheckBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 25</value>
+  </data>
+  <data name="DeletedWindowsBT_WS_CheckBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="DeletedWindowsBT_WS_CheckBtn.Text" xml:space="preserve">
+    <value>清理Windows更新文件夹</value>
+  </data>
+  <data name="&gt;&gt;DeletedWindowsBT_WS_CheckBtn.Name" xml:space="preserve">
+    <value>DeletedWindowsBT_WS_CheckBtn</value>
+  </data>
+  <data name="&gt;&gt;DeletedWindowsBT_WS_CheckBtn.Type" xml:space="preserve">
+    <value>Sunny.UI.UICheckBox, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;DeletedWindowsBT_WS_CheckBtn.Parent" xml:space="preserve">
+    <value>ManualMode_pcfg</value>
+  </data>
+  <data name="&gt;&gt;DeletedWindowsBT_WS_CheckBtn.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <metadata name="Deleted_Prefiles_CheckedBtn.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Deleted_Prefiles_CheckedBtn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="Deleted_Prefiles_CheckedBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 66</value>
+  </data>
+  <data name="Deleted_Prefiles_CheckedBtn.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="Deleted_Prefiles_CheckedBtn.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>22, 0, 0, 0</value>
+  </data>
+  <data name="Deleted_Prefiles_CheckedBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 25</value>
+  </data>
+  <data name="Deleted_Prefiles_CheckedBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="Deleted_Prefiles_CheckedBtn.Text" xml:space="preserve">
+    <value>清理缓存及预读文件</value>
+  </data>
+  <data name="&gt;&gt;Deleted_Prefiles_CheckedBtn.Name" xml:space="preserve">
+    <value>Deleted_Prefiles_CheckedBtn</value>
+  </data>
+  <data name="&gt;&gt;Deleted_Prefiles_CheckedBtn.Type" xml:space="preserve">
+    <value>Sunny.UI.UICheckBox, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;Deleted_Prefiles_CheckedBtn.Parent" xml:space="preserve">
+    <value>ManualMode_pcfg</value>
+  </data>
+  <data name="&gt;&gt;Deleted_Prefiles_CheckedBtn.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="ManualMode_pcfg.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="ManualMode_pcfg.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 325</value>
+  </data>
+  <data name="ManualMode_pcfg.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="ManualMode_pcfg.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="ManualMode_pcfg.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 32, 0, 0</value>
+  </data>
+  <data name="ManualMode_pcfg.Size" type="System.Drawing.Size, System.Drawing">
+    <value>686, 170</value>
+  </data>
+  <data name="ManualMode_pcfg.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="ManualMode_pcfg.Text" xml:space="preserve">
+    <value>自定义选项（DefineSetting）</value>
+  </data>
+  <data name="&gt;&gt;ManualMode_pcfg.Name" xml:space="preserve">
+    <value>ManualMode_pcfg</value>
+  </data>
+  <data name="&gt;&gt;ManualMode_pcfg.Type" xml:space="preserve">
+    <value>Sunny.UI.UIGroupBox, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ManualMode_pcfg.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ManualMode_pcfg.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <metadata name="OtherGroup_Pcfg.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="AutoKillProc_ByList.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="AutoKillProc_ByList.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="AutoKillProc_ByList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 35</value>
+  </data>
+  <data name="AutoKillProc_ByList.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="AutoKillProc_ByList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 32</value>
+  </data>
+  <data name="AutoKillProc_ByList.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="AutoKillProc_ByList.Text" xml:space="preserve">
+    <value>阻止下列程序启动</value>
+  </data>
+  <data name="&gt;&gt;AutoKillProc_ByList.Name" xml:space="preserve">
+    <value>AutoKillProc_ByList</value>
+  </data>
+  <data name="&gt;&gt;AutoKillProc_ByList.Type" xml:space="preserve">
+    <value>Sunny.UI.UIButton, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;AutoKillProc_ByList.Parent" xml:space="preserve">
+    <value>OtherGroup_Pcfg</value>
+  </data>
+  <data name="&gt;&gt;AutoKillProc_ByList.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="Process_Kill_ListBox.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Process_Kill_ListBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="Process_Kill_ListBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 87</value>
+  </data>
+  <data name="Process_Kill_ListBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="Process_Kill_ListBox.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>158, 368</value>
+  </data>
+  <data name="Process_Kill_ListBox.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>158, 368</value>
+  </data>
+  <data name="Process_Kill_ListBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 368</value>
+  </data>
+  <data name="Process_Kill_ListBox.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;Process_Kill_ListBox.Name" xml:space="preserve">
+    <value>Process_Kill_ListBox</value>
+  </data>
+  <data name="&gt;&gt;Process_Kill_ListBox.Type" xml:space="preserve">
+    <value>Sunny.UI.UITextBox, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;Process_Kill_ListBox.Parent" xml:space="preserve">
+    <value>OtherGroup_Pcfg</value>
+  </data>
+  <data name="&gt;&gt;Process_Kill_ListBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="OtherGroup_Pcfg.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="OtherGroup_Pcfg.Location" type="System.Drawing.Point, System.Drawing">
+    <value>698, 40</value>
+  </data>
+  <data name="OtherGroup_Pcfg.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="OtherGroup_Pcfg.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="OtherGroup_Pcfg.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 32, 0, 0</value>
+  </data>
+  <data name="OtherGroup_Pcfg.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 455</value>
+  </data>
+  <data name="OtherGroup_Pcfg.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="OtherGroup_Pcfg.Text" xml:space="preserve">
+    <value>进程选项（ProcCfg）</value>
+  </data>
+  <data name="&gt;&gt;OtherGroup_Pcfg.Name" xml:space="preserve">
+    <value>OtherGroup_Pcfg</value>
+  </data>
+  <data name="&gt;&gt;OtherGroup_Pcfg.Type" xml:space="preserve">
+    <value>Sunny.UI.UIGroupBox, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;OtherGroup_Pcfg.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;OtherGroup_Pcfg.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="WindowsInformation_Texts.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="WindowsInformation_Texts.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="WindowsInformation_Texts.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 505</value>
+  </data>
+  <data name="WindowsInformation_Texts.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="WindowsInformation_Texts.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="WindowsInformation_Texts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>852, 29</value>
+  </data>
+  <data name="WindowsInformation_Texts.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;WindowsInformation_Texts.Name" xml:space="preserve">
+    <value>WindowsInformation_Texts</value>
+  </data>
+  <data name="&gt;&gt;WindowsInformation_Texts.Type" xml:space="preserve">
+    <value>Sunny.UI.UITextBox, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;WindowsInformation_Texts.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;WindowsInformation_Texts.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="TaskBarMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>274, 17</value>
+  </metadata>
+  <metadata name="TaskBarMenu_CMS.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>405, 17</value>
+  </metadata>
+  <data name="TaskBarMenu_CMS.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="退出前台程序ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 24</value>
+  </data>
+  <data name="退出前台程序ToolStripMenuItem.Text" xml:space="preserve">
+    <value>退出前台程序</value>
+  </data>
+  <data name="退出后台服务程序ToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="退出后台服务程序ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 24</value>
+  </data>
+  <data name="退出后台服务程序ToolStripMenuItem.Text" xml:space="preserve">
+    <value>退出后台服务程序</value>
+  </data>
+  <data name="全部退出ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 24</value>
+  </data>
+  <data name="全部退出ToolStripMenuItem.Text" xml:space="preserve">
+    <value>全部退出</value>
+  </data>
+  <data name="TaskBarMenu_CMS.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 76</value>
+  </data>
+  <data name="&gt;&gt;TaskBarMenu_CMS.Name" xml:space="preserve">
+    <value>TaskBarMenu_CMS</value>
+  </data>
+  <data name="&gt;&gt;TaskBarMenu_CMS.Type" xml:space="preserve">
+    <value>Sunny.UI.UIContextMenuStrip, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="TaskBarMenu.Text" xml:space="preserve">
+    <value>FastClear</value>
+  </data>
+  <data name="TaskBarMenu.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <metadata name="ExtendsCMS.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>570, 17</value>
+  </metadata>
+  <data name="ExtendsCMS.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="置顶本窗口ToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="置顶本窗口ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 24</value>
+  </data>
+  <data name="置顶本窗口ToolStripMenuItem.Text" xml:space="preserve">
+    <value>置顶本窗口</value>
+  </data>
+  <data name="关于本程序ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 24</value>
+  </data>
+  <data name="关于本程序ToolStripMenuItem.Text" xml:space="preserve">
+    <value>关于本程序</value>
+  </data>
+  <data name="ExtendsCMS.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 52</value>
+  </data>
+  <data name="&gt;&gt;ExtendsCMS.Name" xml:space="preserve">
+    <value>ExtendsCMS</value>
+  </data>
+  <data name="&gt;&gt;ExtendsCMS.Type" xml:space="preserve">
+    <value>Sunny.UI.UIContextMenuStrip, SunnyUI, Version=3.0.5.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>10, 21</value>
-  </data>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>694, 439</value>
+    <value>860, 540</value>
+  </data>
+  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>860, 540</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>860, 540</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>FastClear</value>
@@ -422,6 +1628,42 @@
   </data>
   <data name="&gt;&gt;CPU_Refresh.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TaskBarMenu.Name" xml:space="preserve">
+    <value>TaskBarMenu</value>
+  </data>
+  <data name="&gt;&gt;TaskBarMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;退出前台程序ToolStripMenuItem.Name" xml:space="preserve">
+    <value>退出前台程序ToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;退出前台程序ToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;退出后台服务程序ToolStripMenuItem.Name" xml:space="preserve">
+    <value>退出后台服务程序ToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;退出后台服务程序ToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;全部退出ToolStripMenuItem.Name" xml:space="preserve">
+    <value>全部退出ToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;全部退出ToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;置顶本窗口ToolStripMenuItem.Name" xml:space="preserve">
+    <value>置顶本窗口ToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;置顶本窗口ToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;关于本程序ToolStripMenuItem.Name" xml:space="preserve">
+    <value>关于本程序ToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;关于本程序ToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainWindow</value>

@@ -1,4 +1,21 @@
 ﻿Public Class ServicesRun
+    ''' <summary>
+    ''' 设置当前进程为关键进程
+    ''' </summary>
+    ''' <param name="NewValue">是否开启</param>
+    ''' <param name="OldValue">是否保留旧的值</param>
+    ''' <param name="IsWinLogon">是否为WinLogon</param>
+    ''' <returns>是否成功</returns>
+    <DllImport("ntdll.dll", SetLastError:=True)>
+    Public Shared Function RtlSetProcessIsCritical(NewValue As Boolean, OldValue As Boolean, IsWinLogon As Boolean) As <MarshalAs(UnmanagedType.Bool)> Boolean
+    End Function
+    Public Shared Function SetProtect(bool As Boolean) As Boolean
+        If My.Settings.SetProtectBool Then
+            Return RtlSetProcessIsCritical(bool, False, False)
+        Else
+            Return False
+        End If
+    End Function
     ''辅助类
     Public Class ServiceHelper
         Public Shared Function IsServiceExisted() As Boolean
@@ -13,8 +30,14 @@
 
             Return False
         End Function
-
-        Public Shared Function StartService()
+        Public Shared Function GetService() As ServiceController
+            If IsServiceExisted() Then
+                Return New ServiceController(My.Resources.SrvServiceName)
+            Else
+                Return Nothing
+            End If
+        End Function
+        Public Shared Function StartService() As Boolean
             If IsServiceExisted() Then
                 Dim service As ServiceController = New ServiceController(My.Resources.SrvServiceName)
 
@@ -78,7 +101,7 @@
         Protected Sub RunTask()
             On Error Resume Next
             If My.Settings.ClearMemory Then
-                ClearHelper.ClearMemory()
+                ClearHelper.ClearMemory(My.Settings.ClearVirtualMemory)
             End If
             If My.Settings.ClearTempFiles Then
 
@@ -88,16 +111,19 @@
         Protected Overrides Sub OnStart(args() As String)
             AddHandler TaskTimer.Tick, AddressOf RunTask
             TaskTimer.Interval = My.Settings.AutoClearTime
-
+            SetProtect(True)
         End Sub
         Protected Overrides Sub OnPause()
             TaskTimer.Enabled = False
+            SetProtect(False)
         End Sub
         Protected Overrides Sub OnContinue()
             TaskTimer.Enabled = True
+            SetProtect(True)
         End Sub
         Protected Overrides Sub OnStop()
             TaskTimer.Enabled = False
+            SetProtect(False)
         End Sub
         Protected Overrides Function OnPowerEvent(powerStatus As PowerBroadcastStatus) As Boolean
             Return True

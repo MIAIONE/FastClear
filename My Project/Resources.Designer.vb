@@ -61,11 +61,31 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  查找 System.Byte[] 类型的本地化资源。
+        '''</summary>
+        Friend ReadOnly Property RootCA() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("RootCA", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
         '''  查找类似 &quot; 的本地化字符串。
         '''</summary>
         Friend ReadOnly Property SChar() As String
             Get
                 Return ResourceManager.GetString("SChar", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查找 System.Byte[] 类型的本地化资源。
+        '''</summary>
+        Friend ReadOnly Property SignKey() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("SignKey", resourceCulture)
+                Return CType(obj,Byte())
             End Get
         End Property
         

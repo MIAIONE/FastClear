@@ -117,8 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="RootCA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RootCA.cer;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="SChar" xml:space="preserve">
     <value>"</value>
+  </data>
+  <data name="SignKey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SignKey.cer;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="SrvDescription" xml:space="preserve">
     <value>此服务用于执行设置的快速清理任务。 该服务由 Fast Clear 创建。 请不要手动删除该服务，否则可能导致系统异常。| This service is used to perform set quick cleanup tasks. This service is created by Fast Clear. Please do not delete this service manually, otherwise it may cause system abnormalities.</value>

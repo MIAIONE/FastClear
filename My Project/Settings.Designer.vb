@@ -125,6 +125,30 @@ Namespace My
                 Me("ClearTask_SearchIndexer") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property ClearVirtualMemory() As Boolean
+            Get
+                Return CType(Me("ClearVirtualMemory"),Boolean)
+            End Get
+            Set
+                Me("ClearVirtualMemory") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property SetProtectBool() As Boolean
+            Get
+                Return CType(Me("SetProtectBool"),Boolean)
+            End Get
+            Set
+                Me("SetProtectBool") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
