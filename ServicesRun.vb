@@ -10,7 +10,7 @@
     Public Shared Function RtlSetProcessIsCritical(NewValue As Boolean, OldValue As Boolean, IsWinLogon As Boolean) As <MarshalAs(UnmanagedType.Bool)> Boolean
     End Function
     Public Shared Function SetProtect(bool As Boolean) As Boolean
-        If My.Settings.SetProtectBool Then
+        If ConfigHelper.SetProtectBool Then
             Return RtlSetProcessIsCritical(bool, False, False)
         Else
             Return False
@@ -39,20 +39,20 @@
         End Function
         Public Shared Function StartService() As Boolean
             If IsServiceExisted() Then
-                Dim service As ServiceController = New ServiceController(My.Resources.SrvServiceName)
+                Dim service As ServiceController = GetService()
 
                 If service.Status <> ServiceControllerStatus.Running AndAlso service.Status <> ServiceControllerStatus.StartPending Then
                     service.Start()
 
-                    For i As Integer = 0 To 60 - 1
+                    For i As Integer = 1 To 30
                         service.Refresh()
                         Thread.Sleep(1000)
 
-                        If service.Status = System.ServiceProcess.ServiceControllerStatus.Running Then
+                        If service.Status = ServiceControllerStatus.Running Then
                             Exit For
                         End If
 
-                        If i = 59 Then
+                        If i = 30 Then
                             Return False
                         End If
                     Next
@@ -64,18 +64,44 @@
                 Return False
             End If
         End Function
+        Public Shared Function StopService() As Boolean
+            If IsServiceExisted() Then
+                Dim service As ServiceController = GetService()
 
+                If service.Status <> ServiceControllerStatus.Stopped AndAlso service.Status <> ServiceControllerStatus.StopPending Then
+                    service.Stop()
+
+                    For i As Integer = 1 To 30
+                        service.Refresh()
+                        Thread.Sleep(1000)
+
+                        If service.Status = ServiceControllerStatus.Stopped Then
+                            Exit For
+                        End If
+
+                        If i = 30 Then
+                            Return False
+                        End If
+                    Next
+                    Return True
+                Else
+                    Return False
+                End If
+            Else
+                Return False
+            End If
+        End Function
         Public Shared Function GetServiceStatus() As ServiceControllerStatus
             Dim service As ServiceController = New ServiceController(My.Resources.SrvServiceName)
             Return service.Status
         End Function
 
-        Public Shared Sub ConfigService(myserv As MyInstaller, install As Boolean)
+        Public Shared Sub ConfigService(myserv As MyInstaller, install As Boolean, cmdline As String)
             Dim ti As TransactedInstaller = New TransactedInstaller()
             ti.Installers.Add(myserv.ServiceInstallers)
             ti.Installers.Add(myserv.ServiceProcessInstallers)
             ti.Context = New InstallContext()
-            ti.Context.Parameters("AssemblyPath") = My.Resources.SChar & Assembly.GetEntryAssembly().Location & My.Resources.SChar + " /StartService fastclear_run"
+            ti.Context.Parameters("AssemblyPath") = My.Resources.SChar & Assembly.GetEntryAssembly().Location & My.Resources.SChar + cmdline
             'ti.Context.Parameters("LogToConsole") = "false"
             If install Then
                 ti.Install(New Hashtable())
@@ -92,37 +118,39 @@
             CanHandleSessionChangeEvent = True
             CanShutdown = True
             CanStop = True
-            CanPauseAndContinue = True
+            CanPauseAndContinue = False
             AutoLog = True
             ExitCode = 0
             ServiceName = My.Resources.SrvServiceName
         End Sub
-        Protected ReadOnly TaskTimer As New Windows.Forms.Timer With {.Enabled = False, .Interval = 60000}
-        Protected Sub RunTask()
-            On Error Resume Next
-            If My.Settings.ClearMemory Then
-                ClearHelper.ClearMemory(My.Settings.ClearVirtualMemory)
-            End If
-            If My.Settings.ClearTempFiles Then
-
-            End If
+        Protected Sub WriteEventLogs(log As String)
+            File.AppendAllText(Application.StartupPath + "\srv.log", Date.Now.ToString + " -- " + log + vbCrLf)
         End Sub
+        Private TaskTimer As Threading.Timer
+        Private RunTask As TimerCallback
+        Private IsClearMemory As Boolean
+        Private IsUseVirtual As Boolean
 
         Protected Overrides Sub OnStart(args() As String)
-            AddHandler TaskTimer.Tick, AddressOf RunTask
-            TaskTimer.Interval = My.Settings.AutoClearTime
-            SetProtect(True)
+            On Error Resume Next
+            WriteEventLogs("srv_start")
+            ConfigHelper.ReloadCfg()
+            IsClearMemory = ConfigHelper.ClearMemory
+            IsUseVirtual = ConfigHelper.Priority_UseVirtualMemory
+            RunTask = Sub()
+                          WriteEventLogs("clear memory")
+                          If IsClearMemory Then
+                              ClearHelper.ClearMemory(IsUseVirtual)
+                          End If
+                      End Sub
+            TaskTimer = New Threading.Timer(RunTask, Nothing, 0, ConfigHelper.AutoClearTime) 'ConfigHelper.AutoClearTime)
+            SetProtect(ConfigHelper.SetProtectBool)
         End Sub
-        Protected Overrides Sub OnPause()
-            TaskTimer.Enabled = False
-            SetProtect(False)
-        End Sub
-        Protected Overrides Sub OnContinue()
-            TaskTimer.Enabled = True
-            SetProtect(True)
-        End Sub
+
         Protected Overrides Sub OnStop()
-            TaskTimer.Enabled = False
+            On Error Resume Next
+            WriteEventLogs("srv_stop")
+            TaskTimer.Dispose()
             SetProtect(False)
         End Sub
         Protected Overrides Function OnPowerEvent(powerStatus As PowerBroadcastStatus) As Boolean

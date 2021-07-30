@@ -385,7 +385,7 @@
     <value>微软雅黑, 10pt</value>
   </data>
   <data name="pcg_cfg.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 127</value>
+    <value>4, 123</value>
   </data>
   <data name="pcg_cfg.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -498,6 +498,9 @@
   <metadata name="SetVirtualRAMCheckBtn.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="SetVirtualRAMCheckBtn.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="SetVirtualRAMCheckBtn.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 10pt</value>
   </data>
@@ -534,6 +537,9 @@
   <metadata name="VirtualRAM_MAX_SIZE.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="VirtualRAM_MAX_SIZE.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="VirtualRAM_MAX_SIZE.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 10pt</value>
   </data>
@@ -645,6 +651,9 @@
   <metadata name="VirtualRAM_MIN_SIZE.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="VirtualRAM_MIN_SIZE.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="VirtualRAM_MIN_SIZE.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 10pt</value>
   </data>
@@ -681,6 +690,9 @@
   <metadata name="UseVirtualMemoryCheckBtn.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="UseVirtualMemoryCheckBtn.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="UseVirtualMemoryCheckBtn.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 10pt</value>
   </data>
@@ -790,7 +802,7 @@
     <value>微软雅黑, 10pt</value>
   </data>
   <data name="pcg_settings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>202, 127</value>
+    <value>202, 123</value>
   </data>
   <data name="pcg_settings.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -829,7 +841,7 @@
     <value>微软雅黑, 10pt</value>
   </data>
   <data name="pcg_set.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 36</value>
   </data>
   <data name="pcg_set.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -961,7 +973,7 @@
     <value>微软雅黑, 10pt</value>
   </data>
   <data name="SetMeProtect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>487, 66</value>
+    <value>487, 97</value>
   </data>
   <data name="SetMeProtect.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 1</value>
@@ -997,7 +1009,7 @@
     <value>微软雅黑, 10pt</value>
   </data>
   <data name="RestartSysProc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>487, 97</value>
+    <value>487, 35</value>
   </data>
   <data name="RestartSysProc.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 1</value>
@@ -1066,7 +1078,7 @@
     <value>微软雅黑, 10pt</value>
   </data>
   <data name="MyClearSrv.Location" type="System.Drawing.Point, System.Drawing">
-    <value>487, 35</value>
+    <value>487, 66</value>
   </data>
   <data name="MyClearSrv.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 1</value>
@@ -1075,7 +1087,7 @@
     <value>22, 0, 0, 0</value>
   </data>
   <data name="MyClearSrv.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 25</value>
+    <value>172, 21</value>
   </data>
   <data name="MyClearSrv.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -1351,7 +1363,7 @@
     <value>微软雅黑, 10pt</value>
   </data>
   <data name="ManualMode_pcfg.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 325</value>
+    <value>4, 321</value>
   </data>
   <data name="ManualMode_pcfg.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -1459,7 +1471,7 @@
     <value>微软雅黑, 10pt</value>
   </data>
   <data name="OtherGroup_Pcfg.Location" type="System.Drawing.Point, System.Drawing">
-    <value>698, 40</value>
+    <value>698, 36</value>
   </data>
   <data name="OtherGroup_Pcfg.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -1494,20 +1506,26 @@
   <metadata name="WindowsInformation_Texts.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="WindowsInformation_Texts.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="WindowsInformation_Texts.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 10pt</value>
   </data>
   <data name="WindowsInformation_Texts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 505</value>
+    <value>4, 501</value>
   </data>
   <data name="WindowsInformation_Texts.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
   </data>
+  <data name="WindowsInformation_Texts.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>852, 94</value>
+  </data>
   <data name="WindowsInformation_Texts.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1, 1</value>
+    <value>852, 94</value>
   </data>
   <data name="WindowsInformation_Texts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>852, 29</value>
+    <value>852, 94</value>
   </data>
   <data name="WindowsInformation_Texts.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1606,13 +1624,16 @@
     <value>True</value>
   </metadata>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>860, 540</value>
+    <value>860, 600</value>
   </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>860, 540</value>
+    <value>0, 0</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>860, 540</value>
+  </data>
+  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 31, 0, 0</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>FastClear</value>

@@ -1,4 +1,6 @@
-﻿Public Class ArgsHelper
+﻿Imports ConfigurationBuilder = Microsoft.Extensions.Configuration.ConfigurationBuilder
+
+Public Class ArgsHelper
     Public Shared Function GetCommandLine() As IConfigurationRoot
         On Error Resume Next
         Dim commands As New ConsoleApplicationBase

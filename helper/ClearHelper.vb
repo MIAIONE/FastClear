@@ -1,32 +1,46 @@
 ﻿
 Public Class ClearHelper
+    ''' <summary>
+    ''' 设置程序的WorkingSet大小，如果都为-1则尽可能的使用虚拟内存
+    ''' </summary>
+    ''' <param name="process">进程句柄</param>
+    ''' <param name="minSize">最小大小</param>
+    ''' <param name="maxSize">最大大小</param>
+    ''' <returns>数值</returns>
     <DllImport("kernel32.dll", EntryPoint:="SetProcessWorkingSetSize")>
     Public Shared Function SetProcessWorkingSetSize(process As IntPtr, minSize As Integer, maxSize As Integer) As Integer
     End Function
+
     Public Shared Sub ClearMemory(virtualRAMbool As Boolean)
         On Error Resume Next
         Task.Factory.StartNew(New Action(Sub()
-
-                                             GC.Collect()
-                                             GC.WaitForPendingFinalizers()
-                                             Dim processes As Process() = Process.GetProcesses()
-                                             For Each oprocess As Process In processes
-                                                 Try
+                                             Try
+                                                 GC.Collect()
+                                                 GC.WaitForPendingFinalizers()
+                                                 Dim processes As Process() = Process.GetProcesses()
+                                                 For Each oprocess As Process In processes
                                                      If oprocess IsNot Process.GetCurrentProcess Then
                                                          If oprocess.Handle <> IntPtr.Zero Then
-                                                             If virtualRAMbool Then
-                                                                 SetProcessWorkingSetSize(oprocess.Handle, -1, -1)
-                                                             End If
-                                                             Psapi.EmptyWorkingSet(New Kernel32.SafeObjectHandle(oprocess.Handle))
+                                                             Try
+                                                                 If virtualRAMbool Then
+                                                                     SetProcessWorkingSetSize(oprocess.Handle, -1, -1)
+                                                                 End If
+                                                                 Psapi.EmptyWorkingSet(New Kernel32.SafeObjectHandle(oprocess.Handle))
+                                                             Catch ex As SEHException
+                                                                 Continue For
+                                                             Catch ex1 As NullReferenceException
+                                                                 Continue For
+                                                             Catch ex2 As Exception
+                                                                 Continue For
+                                                             End Try
                                                          End If
                                                      End If
-                                                 Catch ex As SEHException
-                                                 Catch ex As NullReferenceException
-                                                 Catch ex As Exception
-                                                 End Try
-                                             Next
-                                         End Sub))
+                                                 Next
+                                             Catch ex2 As Exception
+                                             End Try
+                                         End Sub)).Wait()
     End Sub
+
     Public Shared Function GetCurrentMemoryUsing() As PerformanceCounter
         On Error Resume Next
         'GC.Collect()
@@ -42,14 +56,56 @@ Public Class ClearHelper
         counters.NextValue()
         Return counters
     End Function
-    Public Shared Function GetAllSubKeyAddin(RootReg As RegistryKey, dirpath As String) As Dictionary(Of String, String)
+    Public Shared Sub ClearReg()
         On Error Resume Next
-        Dim new_dic As New Dictionary(Of String, String)
-        For Each strs As String In RootReg.GetSubKeyNames
-            new_dic.Add(dirpath, strs + "\" + dirpath)
-        Next
-        Return new_dic
-    End Function
+        SetReg(Registry.LocalMachine, "SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters", "VideoInitTime", 1024, RegistryValueKind.DWord)
+        SetReg(Registry.LocalMachine, "SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters", "EnablePrefetcher", 1, RegistryValueKind.DWord)
+        SetReg(Registry.LocalMachine, "SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters", "AppLaunchMaxNumPages", 8192, RegistryValueKind.DWord)
+        SetReg(Registry.LocalMachine, "SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters", "AppLaunchMaxNumSections", 512, RegistryValueKind.DWord)
+        SetReg(Registry.LocalMachine, "SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters", "BootMaxNumPages", 128000, RegistryValueKind.DWord)
+        SetReg(Registry.LocalMachine, "SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters", "BootMaxNumSections", 8192, RegistryValueKind.DWord)
+        SetReg(Registry.LocalMachine, "SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters", "MaxNumActiveTraces", 64, RegistryValueKind.DWord)
+        SetReg(Registry.LocalMachine, "SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters", "MaxNumSavedTraces", 64, RegistryValueKind.DWord)
+        SetReg(Registry.LocalMachine, "SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters", "RootDirPath", "Prefetch", RegistryValueKind.String)
+        SetReg(Registry.LocalMachine, "SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters", "HostingAppList", "DLLHOST.EXE,MMC.EXE,RUNDLL32.EXE", RegistryValueKind.String)
+        SetReg(Registry.LocalMachine, "SYSTEM\CurrentControlSet\Control", "WaitToKillServiceTimeout", "10000", RegistryValueKind.String)
+        SetReg(Registry.CurrentUser, "Control Panel\Desktop", "AutoEndTasks", 1, RegistryValueKind.DWord)
+        SetReg(Registry.CurrentUser, "Control Panel\Desktop", "HungAppTimeout", "100", RegistryValueKind.String)
+        SetReg(Registry.CurrentUser, "Control Panel\Desktop", "WaitToKillAppTimeout", "500", RegistryValueKind.String)
+        SetReg(Registry.CurrentUser, "SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer", "AlwaysUnloadDLL", 1, RegistryValueKind.DWord)
+        SetReg(Registry.LocalMachine, "SOFTWARE\Microsoft\Dfrg\BootOptimizeFunction", "Enable", "yes", RegistryValueKind.String)
+        SetReg(Registry.LocalMachine, "SYSTEM\CurrentControlSet\Services\stisvc", "Start", 4, RegistryValueKind.DWord)
+        SetReg(Registry.LocalMachine, "SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer", "NoRemoteRecursiveEvents", 1, RegistryValueKind.DWord)
+        SetReg(Registry.CurrentUser, "SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer", "NoSaveSettings", 0, RegistryValueKind.DWord)
+        SetReg(Registry.CurrentUser, "SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced", "NoNetCrawling", 1, RegistryValueKind.DWord)
+        SetReg(Registry.LocalMachine, "SYSTEM\CurrentControlSet\Control\FileSYSTEM\CDFS", "CacheSize", 4096, RegistryValueKind.DWord)
+        SetReg(Registry.LocalMachine, "SYSTEM\CurrentControlSet\Control\FileSYSTEM\CDFS", "Prefetch", 0, RegistryValueKind.DWord)
+        SetReg(Registry.LocalMachine, "SYSTEM\CurrentControlSet\Control\FileSYSTEM\CDFS", "PrefetchTail", 256, RegistryValueKind.DWord)
+        SetReg(Registry.LocalMachine, "SYSTEM\CurrentControlSet\Control\FileSYSTEM", "Win31FileSYSTEM", 0, RegistryValueKind.DWord)
+        SetReg(Registry.LocalMachine, "SYSTEM\CurrentControlSet\Control\FileSYSTEM", "NtfsDisable8dot3NameCreation", 0, RegistryValueKind.DWord)
+        SetReg(Registry.LocalMachine, "SYSTEM\CurrentControlSet\Control\FileSYSTEM", "Win95TruncatedExtensions", 1, RegistryValueKind.DWord)
+        SetReg(Registry.LocalMachine, "SYSTEM\CurrentControlSet\Control\FileSYSTEM", "NtfsAllowExtendedCharacterIn8dot3Name", 1, RegistryValueKind.DWord)
+        SetReg(Registry.LocalMachine, "SYSTEM\CurrentControlSet\Control\FileSYSTEM", "ConfigFileAllocSize", 1024, RegistryValueKind.DWord)
+        SetReg(Registry.CurrentUser, "SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CabinetState", "Use Search Asst", "no", RegistryValueKind.String)
+        SetReg(Registry.CurrentUser, "SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced", "DisableThumbnailCache", 1, RegistryValueKind.DWord)
+        SetReg(Registry.LocalMachine, "SOFTWARE\Policies\Microsoft\Windows\DriverSearching", "DontSearchWindowsUpdate", 1, RegistryValueKind.DWord)
+        SetReg(Registry.CurrentUser, "SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Desktop\CleanupWiz", "NoRun", 1, RegistryValueKind.DWord)
+        SetReg(Registry.LocalMachine, "SOFTWARE\Microsoft\MediaPlayer", "PlayerUpgrade\AskMeAgain", "no", RegistryValueKind.String)
+        SetReg(Registry.LocalMachine, "SOFTWARE\Policies\Microsoft\WindowsMediaPlayer", "DisableAutoUpdate", 1, RegistryValueKind.DWord)
+        SetReg(Registry.LocalMachine, "SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon", "SFCDisable", 4294967197, RegistryValueKind.DWord)
+        SetReg(Registry.LocalMachine, "SYSTEM\CurrentControlSet\Services\lanmanserver\parameters", "AutoShareServer", 0, RegistryValueKind.DWord)
+        SetReg(Registry.LocalMachine, "SYSTEM\CurrentControlSet\Services\lanmanserver\parameters", "AutoShareWks", 0, RegistryValueKind.DWord)
+        SetReg(Registry.LocalMachine, "SOFTWARE\Microsoft\PCHealth\ErrorReporting", "AllOrNone", 3, RegistryValueKind.DWord)
+        SetReg(Registry.LocalMachine, "SOFTWARE\Microsoft\PCHealth\ErrorReporting", "IncludeKernelFaults", 0, RegistryValueKind.DWord)
+        SetReg(Registry.LocalMachine, "SOFTWARE\Microsoft\PCHealth\ErrorReporting", "IncludeMicrosoftApps", 0, RegistryValueKind.DWord)
+        SetReg(Registry.LocalMachine, "SOFTWARE\Microsoft\PCHealth\ErrorReporting", "IncludeWindowsApps", 0, RegistryValueKind.DWord)
+        SetReg(Registry.LocalMachine, "SOFTWARE\Microsoft\PCHealth\ErrorReporting", "DoReport", 0, RegistryValueKind.DWord)
+        SetReg(Registry.CurrentUser, "SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer", "NoDriveTypeAutoRun", 255, RegistryValueKind.DWord)
+        SetReg(Registry.LocalMachine, "SYSTEM\CurrentControlSet\Control\Windows", "NoPopUpsOnBoot", "1", RegistryValueKind.String)
+        SetReg(Registry.LocalMachine, "SOFTWARE\Microsoft\Windows\CurrentVersion\policies\SYSTEM", "legalnoticecaption", "", RegistryValueKind.String)
+        SetReg(Registry.LocalMachine, "SOFTWARE\Microsoft\Windows\CurrentVersion\policies\SYSTEM", "legalnoticetext", "", RegistryValueKind.String)
+        SetReg(Registry.LocalMachine, "SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon", "AutoAdminLogon", "0", RegistryValueKind.String)
+    End Sub
     Public Shared Sub SetReg(RootReg As RegistryKey, dirpath As String, keyname As String, keyvalue As Object, valuekind As RegistryValueKind)
         On Error Resume Next
         RootReg.OpenSubKey(dirpath, True).SetValue(keyname, keyvalue, valuekind)
@@ -72,15 +128,8 @@ Public Class ClearHelper
     End Function
 
     Public Shared Sub ClearSystemProcess()
-        If My.Settings.ClearTask_Dwm Then
-            RestartProcess("dwm", False)
-        End If
-        If My.Settings.ClearTask_Explorer Then
-            RestartProcess("explorer")
-        End If
-        If My.Settings.ClearTask_SearchIndexer Then
-            RestartProcess("searchindexer", False)
-        End If
+        RestartProcess("dwm", False)
+        RestartProcess("explorer")
     End Sub
     Public Shared Sub RestartProcess(name As String, Optional autoRun As Boolean = True)
         On Error Resume Next

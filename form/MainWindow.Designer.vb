@@ -50,26 +50,26 @@ Partial Class MainWindow
         Me.UiTextBox2 = New Sunny.UI.UITextBox()
         Me.DISM_CLEAR_CheckBtn = New Sunny.UI.UICheckBox()
         Me.ManualMode_pcfg = New Sunny.UI.UIGroupBox()
+        Me.SetMeProtect = New Sunny.UI.UICheckBox()
+        Me.RestartSysProc = New Sunny.UI.UICheckBox()
+        Me.ApplyForeCtrlBtn = New Sunny.UI.UIButton()
+        Me.MyClearSrv = New Sunny.UI.UICheckBox()
+        Me.HiberSleep = New Sunny.UI.UICheckBox()
+        Me.Fastboot = New Sunny.UI.UICheckBox()
+        Me.SrvListControl = New Sunny.UI.UICheckBox()
+        Me.RegClear = New Sunny.UI.UICheckBox()
+        Me.DeletedOldWindowsCheckBtn = New Sunny.UI.UICheckBox()
+        Me.DeletedWindowsBT_WS_CheckBtn = New Sunny.UI.UICheckBox()
         Me.Deleted_Prefiles_CheckedBtn = New Sunny.UI.UICheckBox()
         Me.OtherGroup_Pcfg = New Sunny.UI.UIGroupBox()
+        Me.AutoKillProc_ByList = New Sunny.UI.UIButton()
+        Me.Process_Kill_ListBox = New Sunny.UI.UITextBox()
         Me.WindowsInformation_Texts = New Sunny.UI.UITextBox()
         Me.TaskBarMenu = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.TaskBarMenu_CMS = New Sunny.UI.UIContextMenuStrip()
         Me.退出前台程序ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.退出后台服务程序ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.全部退出ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DeletedWindowsBT_WS_CheckBtn = New Sunny.UI.UICheckBox()
-        Me.DeletedOldWindowsCheckBtn = New Sunny.UI.UICheckBox()
-        Me.Process_Kill_ListBox = New Sunny.UI.UITextBox()
-        Me.RegClear = New Sunny.UI.UICheckBox()
-        Me.SrvListControl = New Sunny.UI.UICheckBox()
-        Me.Fastboot = New Sunny.UI.UICheckBox()
-        Me.HiberSleep = New Sunny.UI.UICheckBox()
-        Me.MyClearSrv = New Sunny.UI.UICheckBox()
-        Me.ApplyForeCtrlBtn = New Sunny.UI.UIButton()
-        Me.AutoKillProc_ByList = New Sunny.UI.UIButton()
-        Me.RestartSysProc = New Sunny.UI.UICheckBox()
-        Me.SetMeProtect = New Sunny.UI.UICheckBox()
         Me.ExtendsCMS = New Sunny.UI.UIContextMenuStrip()
         Me.置顶本窗口ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.关于本程序ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -234,8 +234,8 @@ Partial Class MainWindow
         Me.VirtualRAM_MAX_SIZE.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.VirtualRAM_MAX_SIZE.DecLength = 0
         Me.VirtualRAM_MAX_SIZE.DoubleValue = 12288.0R
-        Me.VirtualRAM_MAX_SIZE.FillColor = System.Drawing.Color.White
         resources.ApplyResources(Me.VirtualRAM_MAX_SIZE, "VirtualRAM_MAX_SIZE")
+        Me.VirtualRAM_MAX_SIZE.FillColor = System.Drawing.Color.White
         Me.VirtualRAM_MAX_SIZE.HasMaximum = True
         Me.VirtualRAM_MAX_SIZE.HasMinimum = True
         Me.VirtualRAM_MAX_SIZE.IntValue = 12288
@@ -268,8 +268,8 @@ Partial Class MainWindow
         Me.VirtualRAM_MIN_SIZE.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.VirtualRAM_MIN_SIZE.DecLength = 0
         Me.VirtualRAM_MIN_SIZE.DoubleValue = 1024.0R
-        Me.VirtualRAM_MIN_SIZE.FillColor = System.Drawing.Color.White
         resources.ApplyResources(Me.VirtualRAM_MIN_SIZE, "VirtualRAM_MIN_SIZE")
+        Me.VirtualRAM_MIN_SIZE.FillColor = System.Drawing.Color.White
         Me.VirtualRAM_MIN_SIZE.HasMaximum = True
         Me.VirtualRAM_MIN_SIZE.HasMinimum = True
         Me.VirtualRAM_MIN_SIZE.IntValue = 1024
@@ -394,6 +394,96 @@ Partial Class MainWindow
         Me.ManualMode_pcfg.Style = Sunny.UI.UIStyle.Custom
         Me.ManualMode_pcfg.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'SetMeProtect
+        '
+        Me.SetMeProtect.Cursor = System.Windows.Forms.Cursors.Arrow
+        resources.ApplyResources(Me.SetMeProtect, "SetMeProtect")
+        Me.SetMeProtect.Name = "SetMeProtect"
+        Me.SetMeProtect.RadiusSides = Sunny.UI.UICornerRadiusSides.None
+        Me.SetMeProtect.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None
+        Me.SetMeProtect.Style = Sunny.UI.UIStyle.Custom
+        '
+        'RestartSysProc
+        '
+        Me.RestartSysProc.Cursor = System.Windows.Forms.Cursors.Arrow
+        resources.ApplyResources(Me.RestartSysProc, "RestartSysProc")
+        Me.RestartSysProc.Name = "RestartSysProc"
+        Me.RestartSysProc.RadiusSides = Sunny.UI.UICornerRadiusSides.None
+        Me.RestartSysProc.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None
+        Me.RestartSysProc.Style = Sunny.UI.UIStyle.Custom
+        '
+        'ApplyForeCtrlBtn
+        '
+        Me.ApplyForeCtrlBtn.Cursor = System.Windows.Forms.Cursors.Arrow
+        resources.ApplyResources(Me.ApplyForeCtrlBtn, "ApplyForeCtrlBtn")
+        Me.ApplyForeCtrlBtn.Name = "ApplyForeCtrlBtn"
+        Me.ApplyForeCtrlBtn.RadiusSides = Sunny.UI.UICornerRadiusSides.None
+        Me.ApplyForeCtrlBtn.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None
+        Me.ApplyForeCtrlBtn.Style = Sunny.UI.UIStyle.Custom
+        '
+        'MyClearSrv
+        '
+        Me.MyClearSrv.Cursor = System.Windows.Forms.Cursors.Arrow
+        resources.ApplyResources(Me.MyClearSrv, "MyClearSrv")
+        Me.MyClearSrv.Name = "MyClearSrv"
+        Me.MyClearSrv.RadiusSides = Sunny.UI.UICornerRadiusSides.None
+        Me.MyClearSrv.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None
+        Me.MyClearSrv.Style = Sunny.UI.UIStyle.Custom
+        '
+        'HiberSleep
+        '
+        Me.HiberSleep.Cursor = System.Windows.Forms.Cursors.Arrow
+        resources.ApplyResources(Me.HiberSleep, "HiberSleep")
+        Me.HiberSleep.Name = "HiberSleep"
+        Me.HiberSleep.RadiusSides = Sunny.UI.UICornerRadiusSides.None
+        Me.HiberSleep.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None
+        Me.HiberSleep.Style = Sunny.UI.UIStyle.Custom
+        '
+        'Fastboot
+        '
+        Me.Fastboot.Cursor = System.Windows.Forms.Cursors.Arrow
+        resources.ApplyResources(Me.Fastboot, "Fastboot")
+        Me.Fastboot.Name = "Fastboot"
+        Me.Fastboot.RadiusSides = Sunny.UI.UICornerRadiusSides.None
+        Me.Fastboot.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None
+        Me.Fastboot.Style = Sunny.UI.UIStyle.Custom
+        '
+        'SrvListControl
+        '
+        Me.SrvListControl.Cursor = System.Windows.Forms.Cursors.Arrow
+        resources.ApplyResources(Me.SrvListControl, "SrvListControl")
+        Me.SrvListControl.Name = "SrvListControl"
+        Me.SrvListControl.RadiusSides = Sunny.UI.UICornerRadiusSides.None
+        Me.SrvListControl.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None
+        Me.SrvListControl.Style = Sunny.UI.UIStyle.Custom
+        '
+        'RegClear
+        '
+        Me.RegClear.Cursor = System.Windows.Forms.Cursors.Arrow
+        resources.ApplyResources(Me.RegClear, "RegClear")
+        Me.RegClear.Name = "RegClear"
+        Me.RegClear.RadiusSides = Sunny.UI.UICornerRadiusSides.None
+        Me.RegClear.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None
+        Me.RegClear.Style = Sunny.UI.UIStyle.Custom
+        '
+        'DeletedOldWindowsCheckBtn
+        '
+        Me.DeletedOldWindowsCheckBtn.Cursor = System.Windows.Forms.Cursors.Arrow
+        resources.ApplyResources(Me.DeletedOldWindowsCheckBtn, "DeletedOldWindowsCheckBtn")
+        Me.DeletedOldWindowsCheckBtn.Name = "DeletedOldWindowsCheckBtn"
+        Me.DeletedOldWindowsCheckBtn.RadiusSides = Sunny.UI.UICornerRadiusSides.None
+        Me.DeletedOldWindowsCheckBtn.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None
+        Me.DeletedOldWindowsCheckBtn.Style = Sunny.UI.UIStyle.Custom
+        '
+        'DeletedWindowsBT_WS_CheckBtn
+        '
+        Me.DeletedWindowsBT_WS_CheckBtn.Cursor = System.Windows.Forms.Cursors.Arrow
+        resources.ApplyResources(Me.DeletedWindowsBT_WS_CheckBtn, "DeletedWindowsBT_WS_CheckBtn")
+        Me.DeletedWindowsBT_WS_CheckBtn.Name = "DeletedWindowsBT_WS_CheckBtn"
+        Me.DeletedWindowsBT_WS_CheckBtn.RadiusSides = Sunny.UI.UICornerRadiusSides.None
+        Me.DeletedWindowsBT_WS_CheckBtn.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None
+        Me.DeletedWindowsBT_WS_CheckBtn.Style = Sunny.UI.UIStyle.Custom
+        '
         'Deleted_Prefiles_CheckedBtn
         '
         Me.Deleted_Prefiles_CheckedBtn.Cursor = System.Windows.Forms.Cursors.Arrow
@@ -417,20 +507,46 @@ Partial Class MainWindow
         Me.OtherGroup_Pcfg.Style = Sunny.UI.UIStyle.Custom
         Me.OtherGroup_Pcfg.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'AutoKillProc_ByList
+        '
+        Me.AutoKillProc_ByList.Cursor = System.Windows.Forms.Cursors.Arrow
+        resources.ApplyResources(Me.AutoKillProc_ByList, "AutoKillProc_ByList")
+        Me.AutoKillProc_ByList.Name = "AutoKillProc_ByList"
+        Me.AutoKillProc_ByList.RadiusSides = Sunny.UI.UICornerRadiusSides.None
+        Me.AutoKillProc_ByList.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None
+        Me.AutoKillProc_ByList.Style = Sunny.UI.UIStyle.Custom
+        '
+        'Process_Kill_ListBox
+        '
+        Me.Process_Kill_ListBox.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Process_Kill_ListBox.DecLength = 0
+        Me.Process_Kill_ListBox.FillColor = System.Drawing.Color.White
+        resources.ApplyResources(Me.Process_Kill_ListBox, "Process_Kill_ListBox")
+        Me.Process_Kill_ListBox.Maximum = 2147483647.0R
+        Me.Process_Kill_ListBox.MaxLength = 2147483647
+        Me.Process_Kill_ListBox.Minimum = 0R
+        Me.Process_Kill_ListBox.Multiline = True
+        Me.Process_Kill_ListBox.Name = "Process_Kill_ListBox"
+        Me.Process_Kill_ListBox.RadiusSides = Sunny.UI.UICornerRadiusSides.None
+        Me.Process_Kill_ListBox.ShowScrollBar = True
+        Me.Process_Kill_ListBox.Style = Sunny.UI.UIStyle.Custom
+        Me.Process_Kill_ListBox.TextAlignment = System.Drawing.ContentAlignment.TopLeft
+        Me.Process_Kill_ListBox.Watermark = "每行输入进程名称，不带 .exe后缀，同时请勿填写已经默认在自定义选项中的进程，否则可能会导致无法启动改程序"
+        '
         'WindowsInformation_Texts
         '
         Me.WindowsInformation_Texts.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.WindowsInformation_Texts.DecLength = 0
-        Me.WindowsInformation_Texts.FillColor = System.Drawing.Color.White
-        Me.WindowsInformation_Texts.FillDisableColor = System.Drawing.Color.White
         resources.ApplyResources(Me.WindowsInformation_Texts, "WindowsInformation_Texts")
-        Me.WindowsInformation_Texts.ForeDisableColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(48, Byte), Integer))
+        Me.WindowsInformation_Texts.FillColor = System.Drawing.Color.White
         Me.WindowsInformation_Texts.Maximum = 2147483647.0R
-        Me.WindowsInformation_Texts.MaxLength = 99999999
+        Me.WindowsInformation_Texts.MaxLength = 2147483647
         Me.WindowsInformation_Texts.Minimum = 1024.0R
+        Me.WindowsInformation_Texts.Multiline = True
         Me.WindowsInformation_Texts.Name = "WindowsInformation_Texts"
         Me.WindowsInformation_Texts.RadiusSides = Sunny.UI.UICornerRadiusSides.None
         Me.WindowsInformation_Texts.ReadOnly = True
+        Me.WindowsInformation_Texts.ShowScrollBar = True
         Me.WindowsInformation_Texts.Style = Sunny.UI.UIStyle.Custom
         Me.WindowsInformation_Texts.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -462,124 +578,6 @@ Partial Class MainWindow
         Me.全部退出ToolStripMenuItem.Name = "全部退出ToolStripMenuItem"
         resources.ApplyResources(Me.全部退出ToolStripMenuItem, "全部退出ToolStripMenuItem")
         '
-        'DeletedWindowsBT_WS_CheckBtn
-        '
-        Me.DeletedWindowsBT_WS_CheckBtn.Cursor = System.Windows.Forms.Cursors.Arrow
-        resources.ApplyResources(Me.DeletedWindowsBT_WS_CheckBtn, "DeletedWindowsBT_WS_CheckBtn")
-        Me.DeletedWindowsBT_WS_CheckBtn.Name = "DeletedWindowsBT_WS_CheckBtn"
-        Me.DeletedWindowsBT_WS_CheckBtn.RadiusSides = Sunny.UI.UICornerRadiusSides.None
-        Me.DeletedWindowsBT_WS_CheckBtn.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None
-        Me.DeletedWindowsBT_WS_CheckBtn.Style = Sunny.UI.UIStyle.Custom
-        '
-        'DeletedOldWindowsCheckBtn
-        '
-        Me.DeletedOldWindowsCheckBtn.Cursor = System.Windows.Forms.Cursors.Arrow
-        resources.ApplyResources(Me.DeletedOldWindowsCheckBtn, "DeletedOldWindowsCheckBtn")
-        Me.DeletedOldWindowsCheckBtn.Name = "DeletedOldWindowsCheckBtn"
-        Me.DeletedOldWindowsCheckBtn.RadiusSides = Sunny.UI.UICornerRadiusSides.None
-        Me.DeletedOldWindowsCheckBtn.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None
-        Me.DeletedOldWindowsCheckBtn.Style = Sunny.UI.UIStyle.Custom
-        '
-        'Process_Kill_ListBox
-        '
-        Me.Process_Kill_ListBox.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Process_Kill_ListBox.DecLength = 0
-        Me.Process_Kill_ListBox.FillColor = System.Drawing.Color.White
-        Me.Process_Kill_ListBox.FillDisableColor = System.Drawing.Color.White
-        resources.ApplyResources(Me.Process_Kill_ListBox, "Process_Kill_ListBox")
-        Me.Process_Kill_ListBox.ForeDisableColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(48, Byte), Integer))
-        Me.Process_Kill_ListBox.Maximum = 2147483647.0R
-        Me.Process_Kill_ListBox.MaxLength = 2147483647
-        Me.Process_Kill_ListBox.Minimum = 0R
-        Me.Process_Kill_ListBox.Multiline = True
-        Me.Process_Kill_ListBox.Name = "Process_Kill_ListBox"
-        Me.Process_Kill_ListBox.RadiusSides = Sunny.UI.UICornerRadiusSides.None
-        Me.Process_Kill_ListBox.ShowScrollBar = True
-        Me.Process_Kill_ListBox.Style = Sunny.UI.UIStyle.Custom
-        Me.Process_Kill_ListBox.TextAlignment = System.Drawing.ContentAlignment.TopLeft
-        Me.Process_Kill_ListBox.Watermark = "每行输入进程名称，不带 .exe后缀，同时请勿填写已经默认在自定义选项中的进程，否则可能会导致无法启动改程序"
-        '
-        'RegClear
-        '
-        Me.RegClear.Cursor = System.Windows.Forms.Cursors.Arrow
-        resources.ApplyResources(Me.RegClear, "RegClear")
-        Me.RegClear.Name = "RegClear"
-        Me.RegClear.RadiusSides = Sunny.UI.UICornerRadiusSides.None
-        Me.RegClear.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None
-        Me.RegClear.Style = Sunny.UI.UIStyle.Custom
-        '
-        'SrvListControl
-        '
-        Me.SrvListControl.Cursor = System.Windows.Forms.Cursors.Arrow
-        resources.ApplyResources(Me.SrvListControl, "SrvListControl")
-        Me.SrvListControl.Name = "SrvListControl"
-        Me.SrvListControl.RadiusSides = Sunny.UI.UICornerRadiusSides.None
-        Me.SrvListControl.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None
-        Me.SrvListControl.Style = Sunny.UI.UIStyle.Custom
-        '
-        'Fastboot
-        '
-        Me.Fastboot.Cursor = System.Windows.Forms.Cursors.Arrow
-        resources.ApplyResources(Me.Fastboot, "Fastboot")
-        Me.Fastboot.Name = "Fastboot"
-        Me.Fastboot.RadiusSides = Sunny.UI.UICornerRadiusSides.None
-        Me.Fastboot.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None
-        Me.Fastboot.Style = Sunny.UI.UIStyle.Custom
-        '
-        'HiberSleep
-        '
-        Me.HiberSleep.Cursor = System.Windows.Forms.Cursors.Arrow
-        resources.ApplyResources(Me.HiberSleep, "HiberSleep")
-        Me.HiberSleep.Name = "HiberSleep"
-        Me.HiberSleep.RadiusSides = Sunny.UI.UICornerRadiusSides.None
-        Me.HiberSleep.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None
-        Me.HiberSleep.Style = Sunny.UI.UIStyle.Custom
-        '
-        'MyClearSrv
-        '
-        Me.MyClearSrv.Cursor = System.Windows.Forms.Cursors.Arrow
-        resources.ApplyResources(Me.MyClearSrv, "MyClearSrv")
-        Me.MyClearSrv.Name = "MyClearSrv"
-        Me.MyClearSrv.RadiusSides = Sunny.UI.UICornerRadiusSides.None
-        Me.MyClearSrv.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None
-        Me.MyClearSrv.Style = Sunny.UI.UIStyle.Custom
-        '
-        'ApplyForeCtrlBtn
-        '
-        Me.ApplyForeCtrlBtn.Cursor = System.Windows.Forms.Cursors.Arrow
-        resources.ApplyResources(Me.ApplyForeCtrlBtn, "ApplyForeCtrlBtn")
-        Me.ApplyForeCtrlBtn.Name = "ApplyForeCtrlBtn"
-        Me.ApplyForeCtrlBtn.RadiusSides = Sunny.UI.UICornerRadiusSides.None
-        Me.ApplyForeCtrlBtn.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None
-        Me.ApplyForeCtrlBtn.Style = Sunny.UI.UIStyle.Custom
-        '
-        'AutoKillProc_ByList
-        '
-        Me.AutoKillProc_ByList.Cursor = System.Windows.Forms.Cursors.Arrow
-        resources.ApplyResources(Me.AutoKillProc_ByList, "AutoKillProc_ByList")
-        Me.AutoKillProc_ByList.Name = "AutoKillProc_ByList"
-        Me.AutoKillProc_ByList.RadiusSides = Sunny.UI.UICornerRadiusSides.None
-        Me.AutoKillProc_ByList.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None
-        Me.AutoKillProc_ByList.Style = Sunny.UI.UIStyle.Custom
-        '
-        'RestartSysProc
-        '
-        Me.RestartSysProc.Cursor = System.Windows.Forms.Cursors.Arrow
-        resources.ApplyResources(Me.RestartSysProc, "RestartSysProc")
-        Me.RestartSysProc.Name = "RestartSysProc"
-        Me.RestartSysProc.RadiusSides = Sunny.UI.UICornerRadiusSides.None
-        Me.RestartSysProc.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None
-        Me.RestartSysProc.Style = Sunny.UI.UIStyle.Custom
-        '
-        'SetMeProtect
-        '
-        Me.SetMeProtect.Cursor = System.Windows.Forms.Cursors.Arrow
-        resources.ApplyResources(Me.SetMeProtect, "SetMeProtect")
-        Me.SetMeProtect.Name = "SetMeProtect"
-        Me.SetMeProtect.RadiusSides = Sunny.UI.UICornerRadiusSides.None
-        Me.SetMeProtect.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None
-        Me.SetMeProtect.Style = Sunny.UI.UIStyle.Custom
-        '
         'ExtendsCMS
         '
         Me.ExtendsCMS.BackColor = System.Drawing.Color.White
@@ -587,6 +585,7 @@ Partial Class MainWindow
         Me.ExtendsCMS.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.置顶本窗口ToolStripMenuItem, Me.关于本程序ToolStripMenuItem})
         Me.ExtendsCMS.Name = "ExtendsCMS"
         Me.ExtendsCMS.ShowImageMargin = False
+        Me.ExtendsCMS.Style = Sunny.UI.UIStyle.Custom
         '
         '置顶本窗口ToolStripMenuItem
         '
@@ -615,13 +614,14 @@ Partial Class MainWindow
         Me.IsForbidAltF4 = True
         Me.MaximizeBox = False
         Me.Name = "MainWindow"
-        Me.Opacity = 0.95R
+        Me.Opacity = 0.96R
         Me.RectColor = System.Drawing.Color.DodgerBlue
         Me.ShowRadius = False
         Me.ShowRect = False
         Me.ShowShadow = True
         Me.Style = Sunny.UI.UIStyle.Custom
         Me.TitleColor = System.Drawing.Color.DodgerBlue
+        Me.TitleHeight = 31
         Me.pcg_cfg.ResumeLayout(False)
         Me.pcg_settings.ResumeLayout(False)
         Me.pcg_settings.PerformLayout()

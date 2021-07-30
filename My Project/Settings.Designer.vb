@@ -17,7 +17,7 @@ Namespace My
     <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.8.1.0"),  _
      Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
-    Partial Friend NotInheritable Class MySettings
+    Partial Public NotInheritable Class MySettings
         Inherits Global.System.Configuration.ApplicationSettingsBase
         
         Private Shared defaultInstance As MySettings = CType(Global.System.Configuration.ApplicationSettingsBase.Synchronized(New MySettings()),MySettings)
@@ -56,30 +56,6 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("60000")>  _
-        Public Property AutoClearTime() As Integer
-            Get
-                Return CType(Me("AutoClearTime"),Integer)
-            End Get
-            Set
-                Me("AutoClearTime") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
-        Public Property ClearMemory() As Boolean
-            Get
-                Return CType(Me("ClearMemory"),Boolean)
-            End Get
-            Set
-                Me("ClearMemory") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
         Public Property ClearTempFiles() As Boolean
             Get
@@ -93,61 +69,109 @@ Namespace My
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
-        Public Property ClearTask_Dwm() As Boolean
+        Public Property StartMySrv() As Boolean
             Get
-                Return CType(Me("ClearTask_Dwm"),Boolean)
+                Return CType(Me("StartMySrv"),Boolean)
             End Get
             Set
-                Me("ClearTask_Dwm") = value
+                Me("StartMySrv") = value
             End Set
         End Property
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
-        Public Property ClearTask_Explorer() As Boolean
+        Public Property DefineVirtualMemory() As Boolean
             Get
-                Return CType(Me("ClearTask_Explorer"),Boolean)
+                Return CType(Me("DefineVirtualMemory"),Boolean)
             End Get
             Set
-                Me("ClearTask_Explorer") = value
+                Me("DefineVirtualMemory") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("12288")>  _
+        Public Property DefineVirtualMemory_Max() As UInteger
+            Get
+                Return CType(Me("DefineVirtualMemory_Max"),UInteger)
+            End Get
+            Set
+                Me("DefineVirtualMemory_Max") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1024")>  _
+        Public Property DefineVirtualMemory_Min() As UInteger
+            Get
+                Return CType(Me("DefineVirtualMemory_Min"),UInteger)
+            End Get
+            Set
+                Me("DefineVirtualMemory_Min") = value
             End Set
         End Property
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
-        Public Property ClearTask_SearchIndexer() As Boolean
+        Public Property GlobalGPUSpeedUp() As Boolean
             Get
-                Return CType(Me("ClearTask_SearchIndexer"),Boolean)
+                Return CType(Me("GlobalGPUSpeedUp"),Boolean)
             End Get
             Set
-                Me("ClearTask_SearchIndexer") = value
+                Me("GlobalGPUSpeedUp") = value
             End Set
         End Property
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
-        Public Property ClearVirtualMemory() As Boolean
+         Global.System.Configuration.DefaultSettingValueAttribute("381b4222-f694-41f0-9685-ff5bb260df2e")>  _
+        Public Property PowerCfgChoice() As Global.System.Guid
             Get
-                Return CType(Me("ClearVirtualMemory"),Boolean)
+                Return CType(Me("PowerCfgChoice"),Global.System.Guid)
             End Get
             Set
-                Me("ClearVirtualMemory") = value
+                Me("PowerCfgChoice") = value
             End Set
         End Property
         
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
-        Public Property SetProtectBool() As Boolean
+         Global.System.Configuration.DefaultSettingValueAttribute("a1841308-3541-4fab-bc81-f71556f20b4a")>  _
+        Public ReadOnly Property PowerCfg_low() As Global.System.Guid
             Get
-                Return CType(Me("SetProtectBool"),Boolean)
+                Return CType(Me("PowerCfg_low"),Global.System.Guid)
             End Get
-            Set
-                Me("SetProtectBool") = value
-            End Set
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("381b4222-f694-41f0-9685-ff5bb260df2e")>  _
+        Public ReadOnly Property PowerCfg_Auto() As Global.System.Guid
+            Get
+                Return CType(Me("PowerCfg_Auto"),Global.System.Guid)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c")>  _
+        Public ReadOnly Property PowerCfg_High() As Global.System.Guid
+            Get
+                Return CType(Me("PowerCfg_High"),Global.System.Guid)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("e9a42b02-d5df-448d-aa00-03f14749eb61")>  _
+        Public ReadOnly Property PowerCfg_Highest() As Global.System.Guid
+            Get
+                Return CType(Me("PowerCfg_Highest"),Global.System.Guid)
+            End Get
         End Property
     End Class
 End Namespace
