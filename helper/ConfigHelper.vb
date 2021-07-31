@@ -22,10 +22,10 @@
     '---------json-----------'
     Public Shared Property GlobalCfg As SrvSettings
     Public Shared Sub UpdateCfg()
-        File.WriteAllText(ClearConst.AppPath + "appConfig.json", GlobalCfg.ToConfig, Encoding.UTF8)
+        File.WriteAllText(AppPath + "appConfig.json", GlobalCfg.ToConfig, Encoding.UTF8)
     End Sub
     Public Shared Sub ReloadCfg()
-        GlobalCfg = File.ReadAllText(ClearConst.AppPath + "appConfig.json", Encoding.UTF8).ToSetting
+        GlobalCfg = File.ReadAllText(AppPath + "appConfig.json", Encoding.UTF8).ToSetting
     End Sub
     Public Shared Property AutoClearTime As Integer
         Set(value As Integer)

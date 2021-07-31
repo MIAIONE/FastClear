@@ -559,7 +559,7 @@
     <value>4</value>
   </data>
   <data name="VirtualRAM_MAX_SIZE.Text" xml:space="preserve">
-    <value>2048</value>
+    <value>12288</value>
   </data>
   <data name="&gt;&gt;VirtualRAM_MAX_SIZE.Name" xml:space="preserve">
     <value>VirtualRAM_MAX_SIZE</value>
@@ -673,7 +673,7 @@
     <value>3</value>
   </data>
   <data name="VirtualRAM_MIN_SIZE.Text" xml:space="preserve">
-    <value>128</value>
+    <value>1024</value>
   </data>
   <data name="&gt;&gt;VirtualRAM_MIN_SIZE.Name" xml:space="preserve">
     <value>VirtualRAM_MIN_SIZE</value>
@@ -1045,7 +1045,7 @@
     <value>微软雅黑, 10pt</value>
   </data>
   <data name="ApplyForeCtrlBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>500, 128</value>
+    <value>487, 128</value>
   </data>
   <data name="ApplyForeCtrlBtn.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 1</value>
@@ -1078,7 +1078,7 @@
     <value>微软雅黑, 10pt</value>
   </data>
   <data name="MyClearSrv.Location" type="System.Drawing.Point, System.Drawing">
-    <value>487, 68</value>
+    <value>487, 66</value>
   </data>
   <data name="MyClearSrv.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1, 1</value>

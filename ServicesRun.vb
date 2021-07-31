@@ -124,10 +124,7 @@
             ServiceName = My.Resources.SrvServiceName
         End Sub
         Protected Sub WriteEventLogs(log As String)
-            If (New FileInfo(ClearConst.AppPath + "srv.log")).Length >= 134217728 Then
-                File.Delete(ClearConst.AppPath + "srv.log")
-            End If
-            File.AppendAllText(ClearConst.AppPath + "srv.log", Date.Now.ToString + " -- " + log + vbCrLf)
+            File.AppendAllText(Application.StartupPath + "\srv.log", Date.Now.ToString + " -- " + log + vbCrLf)
         End Sub
         Private TaskTimer As Threading.Timer
         Private RunTask As TimerCallback
