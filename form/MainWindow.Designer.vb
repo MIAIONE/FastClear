@@ -233,16 +233,16 @@ Partial Class MainWindow
         '
         Me.VirtualRAM_MAX_SIZE.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.VirtualRAM_MAX_SIZE.DecLength = 0
-        Me.VirtualRAM_MAX_SIZE.DoubleValue = 12288.0R
+        Me.VirtualRAM_MAX_SIZE.DoubleValue = 2048.0R
         resources.ApplyResources(Me.VirtualRAM_MAX_SIZE, "VirtualRAM_MAX_SIZE")
         Me.VirtualRAM_MAX_SIZE.FillColor = System.Drawing.Color.White
         Me.VirtualRAM_MAX_SIZE.HasMaximum = True
         Me.VirtualRAM_MAX_SIZE.HasMinimum = True
-        Me.VirtualRAM_MAX_SIZE.IntValue = 12288
+        Me.VirtualRAM_MAX_SIZE.IntValue = 2048
         Me.VirtualRAM_MAX_SIZE.Maximum = 2147483647.0R
         Me.VirtualRAM_MAX_SIZE.MaximumEnabled = True
         Me.VirtualRAM_MAX_SIZE.MaxLength = 32
-        Me.VirtualRAM_MAX_SIZE.Minimum = 1024.0R
+        Me.VirtualRAM_MAX_SIZE.Minimum = 0R
         Me.VirtualRAM_MAX_SIZE.MinimumEnabled = True
         Me.VirtualRAM_MAX_SIZE.Name = "VirtualRAM_MAX_SIZE"
         Me.VirtualRAM_MAX_SIZE.RadiusSides = Sunny.UI.UICornerRadiusSides.None
@@ -267,16 +267,16 @@ Partial Class MainWindow
         '
         Me.VirtualRAM_MIN_SIZE.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.VirtualRAM_MIN_SIZE.DecLength = 0
-        Me.VirtualRAM_MIN_SIZE.DoubleValue = 1024.0R
+        Me.VirtualRAM_MIN_SIZE.DoubleValue = 128.0R
         resources.ApplyResources(Me.VirtualRAM_MIN_SIZE, "VirtualRAM_MIN_SIZE")
         Me.VirtualRAM_MIN_SIZE.FillColor = System.Drawing.Color.White
         Me.VirtualRAM_MIN_SIZE.HasMaximum = True
         Me.VirtualRAM_MIN_SIZE.HasMinimum = True
-        Me.VirtualRAM_MIN_SIZE.IntValue = 1024
+        Me.VirtualRAM_MIN_SIZE.IntValue = 128
         Me.VirtualRAM_MIN_SIZE.Maximum = 2147483647.0R
         Me.VirtualRAM_MIN_SIZE.MaximumEnabled = True
         Me.VirtualRAM_MIN_SIZE.MaxLength = 32
-        Me.VirtualRAM_MIN_SIZE.Minimum = 1024.0R
+        Me.VirtualRAM_MIN_SIZE.Minimum = 0R
         Me.VirtualRAM_MIN_SIZE.MinimumEnabled = True
         Me.VirtualRAM_MIN_SIZE.Name = "VirtualRAM_MIN_SIZE"
         Me.VirtualRAM_MIN_SIZE.RadiusSides = Sunny.UI.UICornerRadiusSides.None

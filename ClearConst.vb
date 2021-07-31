@@ -23,3 +23,14 @@
     Public Shared ReadOnly USER_TEMP As String = Environment.GetEnvironmentVariable("TEMP", EnvironmentVariableTarget.User) + "\"
     Public Shared ReadOnly CURRENT_TEMP As String = Path.GetTempPath
 End Class
+Public Class SetSuperRunningToken
+    Inherits Attribute
+    Public Sub New(token As Privilege)
+        Program.GetToken(token)
+    End Sub
+End Class
+Public Module Helpers
+    Public Function SizeOf(obj As Object) As Integer
+        Return Len(obj)
+    End Function
+End Module
