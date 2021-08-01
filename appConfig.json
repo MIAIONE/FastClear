@@ -1,7 +1,7 @@
 {
   "AutoClearTime": 15000,
   "ClearMemory": 1,
-  "Priority_UseVirtualMemory": 0,
+  "Priority_UseVirtualMemory": 1,
   "SetProtectBool": 0,
   "DenideProcessRunList": []
 }

@@ -39,7 +39,11 @@ Public Class Program
     End Function
     Public Shared Sub Main(args As String())
         On Error Resume Next
+        ''---------test----------''
+        'On Error Resume Next
+        GetAllToken()
 
+        ''---------test----------''
         AddHandler Application.ThreadException, AddressOf Application_ThreadException
         AddHandler AppDomain.CurrentDomain.UnhandledException, AddressOf CurrentDomain_UnhandledException
         'GetToken()

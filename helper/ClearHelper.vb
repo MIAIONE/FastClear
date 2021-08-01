@@ -1,22 +1,17 @@
 ﻿
 Imports Version = System.Version
-'<SetSuperRunningToken(Privilege.ProfileSingleProcess + Privilege.AssignPrimaryToken)>
+<SetSuperRunningToken(Privilege.ProfileSingleProcess + Privilege.IncreaseQuota)>
 Public Class ClearHelper
-    ''' <summary>
-    ''' 设置程序的WorkingSet大小，如果都为-1则尽可能的使用虚拟内存
-    ''' </summary>
-    ''' <param name="process">进程句柄</param>
-    ''' <param name="minSize">最小大小</param>
-    ''' <param name="maxSize">最大大小</param>
-    ''' <returns>数值</returns>
-    <DllImport("kernel32.dll", EntryPoint:="SetProcessWorkingSetSize", CallingConvention:=CallingConvention.StdCall, CharSet:=CharSet.Auto)>
-    Public Shared Function SetProcessWorkingSetSize(process As IntPtr, minSize As Integer, maxSize As Integer) As Integer
-    End Function
 
     <DllImport("ntdll.dll")>
     Public Shared Function NtSetSystemInformation(InfoClass As SYSTEM_INFORMATION_CLASS, Info As IntPtr, Length As Integer) As Integer
     End Function
+    <DllImport("psapi.dll")>
+    Public Shared Function EmptyWorkingSet(hwProc As IntPtr) As Integer
+    End Function
 
+    Const MemoryPurgeStandbyList As Integer = 4
+    Const MemoryEmptyWorkingSets As Integer = 2
     <StructLayout(LayoutKind.Sequential, Pack:=1)>
     Public Structure SYSTEM_MEMORY_LIST_INFORMATION
         Public ZeroPageCount As UInteger
@@ -30,7 +25,31 @@ Public Class ClearHelper
         Public RepurposedPagesByPriority As UInteger()
         Public ModifiedPageCountPageFile As UInteger
     End Structure
+    <StructLayout(LayoutKind.Sequential, Pack:=1)>
+    Structure SYSTEM_CACHE_INFORMATION
+        Public CurrentSize As UInteger
+        Public PeakSize As UInteger
+        Public PageFaultCount As UInteger
+        Public MinimumWorkingSet As UInteger
+        Public MaximumWorkingSet As UInteger
+        Public Unused1 As UInteger
+        Public Unused2 As UInteger
+        Public Unused3 As UInteger
+        Public Unused4 As UInteger
+    End Structure
 
+    <StructLayout(LayoutKind.Sequential, Pack:=1)>
+    Structure SYSTEM_CACHE_INFORMATION_64_BIT
+        Public CurrentSize As Long
+        Public PeakSize As Long
+        Public PageFaultCount As Long
+        Public MinimumWorkingSet As Long
+        Public MaximumWorkingSet As Long
+        Public Unused1 As Long
+        Public Unused2 As Long
+        Public Unused3 As Long
+        Public Unused4 As Long
+    End Structure
     Public Enum SYSTEM_INFORMATION_CLASS
         SystemBasicInformation = &H0
         SystemProcessorInformation = &H1
@@ -245,7 +264,54 @@ Public Class ClearHelper
         MaxSystemInfoClass = &HD2
     End Enum
 
+    Public Shared Function Is64BitMode() As Boolean
+        Return IntPtr.Size = 8
+    End Function
 
+    Public Shared Sub ClearFileSystemCache(ClearStandbyCache As Boolean)
+        Try
+
+            Dim num1 As UInteger
+            Dim SystemInfoLength As Integer
+            Dim gcHandle As GCHandle
+
+            If Not Is64BitMode() Then
+                Dim cacheInformation As SYSTEM_CACHE_INFORMATION = New SYSTEM_CACHE_INFORMATION With {
+                    .MinimumWorkingSet = UInteger.MaxValue,
+                    .MaximumWorkingSet = UInteger.MaxValue
+                }
+                SystemInfoLength = Marshal.SizeOf(cacheInformation)
+                gcHandle = GCHandle.Alloc(cacheInformation, GCHandleType.Pinned)
+                num1 = NtSetSystemInformation(SYSTEM_INFORMATION_CLASS.SystemFileCacheInformation, gcHandle.AddrOfPinnedObject(), SystemInfoLength)
+                gcHandle.Free()
+            Else
+                Dim information64Bit As SYSTEM_CACHE_INFORMATION_64_BIT = New SYSTEM_CACHE_INFORMATION_64_BIT With {
+                    .MinimumWorkingSet = -1L,
+                    .MaximumWorkingSet = -1L
+                }
+                SystemInfoLength = Marshal.SizeOf(information64Bit)
+                gcHandle = GCHandle.Alloc(information64Bit, GCHandleType.Pinned)
+                num1 = NtSetSystemInformation(SYSTEM_INFORMATION_CLASS.SystemFileCacheInformation, gcHandle.AddrOfPinnedObject(), SystemInfoLength)
+                gcHandle.Free()
+            End If
+
+            If num1 <> 0 Then
+            End If
+
+
+            If ClearStandbyCache Then
+                Dim _SystemInfoLength As Integer = Marshal.SizeOf(MemoryPurgeStandbyList)
+                Dim _gcHandle As GCHandle = GCHandle.Alloc(MemoryPurgeStandbyList, GCHandleType.Pinned)
+                Dim _num2 As UInteger = NtSetSystemInformation(SYSTEM_INFORMATION_CLASS.SystemMemoryListInformation, _gcHandle.AddrOfPinnedObject(), _SystemInfoLength)
+                _gcHandle.Free()
+                If _num2 <> 0 Then
+                End If
+            End If
+
+        Catch ex As Exception
+            Console.Write(ex.ToString())
+        End Try
+    End Sub
     Public Shared Sub ClearMemory(virtualRAMbool As Boolean)
         On Error Resume Next
         Task.Factory.StartNew(New Action(Sub()
@@ -253,18 +319,17 @@ Public Class ClearHelper
                                              GC.WaitForPendingFinalizers()
                                              Dim processes As Process() = Process.GetProcesses()
                                              For Each oprocess As Process In processes
-                                                 If oprocess IsNot Process.GetCurrentProcess AndAlso oprocess.Handle <> IntPtr.Zero Then
+                                                 If oprocess.Handle <> IntPtr.Zero AndAlso oprocess IsNot Process.GetCurrentProcess Then
                                                      Try
+                                                         'EmptyWorkingSet(oprocess.Handle) '
                                                          Psapi.EmptyWorkingSet(New Kernel32.SafeObjectHandle(oprocess.Handle))
-                                                         If virtualRAMbool Then
-                                                             'SetProcessWorkingSetSize(oprocess.Handle, -1, -1)
-                                                         End If
                                                      Catch ex As SEHException
                                                      Catch ex As NullReferenceException
                                                      Catch ex As Exception
                                                      End Try
                                                  End If
                                              Next
+                                             'ClearFileSystemCache(virtualRAMbool)
                                          End Sub))
 
     End Sub

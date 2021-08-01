@@ -102,6 +102,8 @@
     End Sub
 
     Private Sub SetAppdefineClearing_Click(sender As Object, e As EventArgs) Handles SetAppdefineClearing.Click
+        ClearHelper.ClearMemory(True) 'ConfigHelper.Priority_UseVirtualMemory)
+
         DelayControl(SetAppdefineClearing, False)
         If ServicesRun.ServiceHelper.IsServiceExisted Then
             ServicesRun.ServiceHelper.StopService()
@@ -155,6 +157,7 @@
     End Sub
 
     Private Sub ApplyForeCtrlBtn_Click(sender As Object, e As EventArgs) Handles ApplyForeCtrlBtn.Click
+        ClearHelper.ClearMemory(True)
         DelayControl(ApplyForeCtrlBtn, False)
         Dim FormCtrler As New FormControl
         Dim DismDistance As New DismHelper
@@ -175,8 +178,8 @@
                                              End If
                                              If FormControl.GetControlCheckBoxChecked(Deleted_Prefiles_CheckedBtn) Then
                                                  FormCtrler.AppendMsg("[Memory] 正在清理...")
-                                                 ClearHelper.ClearMemory(False)
-                                                 'ClearHelper.ClearMemory(ConfigHelper.Priority_UseVirtualMemory)
+                                                 'ClearHelper.ClearMemory(False)
+                                                 ClearHelper.ClearMemory(ConfigHelper.Priority_UseVirtualMemory)
                                                  FormCtrler.AppendMsg("[Memory] 清理完成.")
                                              End If
                                              If FormControl.GetControlCheckBoxChecked(DeletedWindowsBT_WS_CheckBtn) Then
