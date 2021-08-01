@@ -1,6 +1,6 @@
 ﻿
 Imports Version = System.Version
-<SetSuperRunningToken(Privilege.ProfileSingleProcess + Privilege.AssignPrimaryToken)>
+'<SetSuperRunningToken(Privilege.ProfileSingleProcess + Privilege.AssignPrimaryToken)>
 Public Class ClearHelper
     ''' <summary>
     ''' 设置程序的WorkingSet大小，如果都为-1则尽可能的使用虚拟内存
@@ -249,39 +249,24 @@ Public Class ClearHelper
     Public Shared Sub ClearMemory(virtualRAMbool As Boolean)
         On Error Resume Next
         Task.Factory.StartNew(New Action(Sub()
-                                             Try
-                                                 GC.Collect()
-                                                 GC.WaitForPendingFinalizers()
-                                                 Dim processes As Process() = Process.GetProcesses()
-                                                 For Each oprocess As Process In processes
-                                                     If oprocess IsNot Process.GetCurrentProcess Then
-                                                         If oprocess.Handle <> IntPtr.Zero Then
-                                                             Try
-                                                                 If Psapi.EmptyWorkingSet(New Kernel32.SafeObjectHandle(oprocess.Handle)) = False Then
-                                                                     MsgBox("EmptyWorkingSet error")
-                                                                 Else
-                                                                     MsgBox("EmptyWorkingSet yes -> " + oprocess.ProcessName)
-                                                                 End If
-
-                                                                 If virtualRAMbool Then
-                                                                     'SetProcessWorkingSetSize(oprocess.Handle, -1, -1)
-                                                                 End If
-                                                             Catch ex As SEHException
-                                                                 MsgBox("EmptyWorkingSet error[SEHException]")
-                                                                 Continue For
-                                                             Catch ex1 As NullReferenceException
-                                                                 MsgBox("EmptyWorkingSet error[NullReferenceException]")
-                                                                 Continue For
-                                                             Catch ex2 As Exception
-                                                                 MsgBox("EmptyWorkingSet error[Exception]")
-                                                                 Continue For
-                                                             End Try
+                                             GC.Collect()
+                                             GC.WaitForPendingFinalizers()
+                                             Dim processes As Process() = Process.GetProcesses()
+                                             For Each oprocess As Process In processes
+                                                 If oprocess IsNot Process.GetCurrentProcess AndAlso oprocess.Handle <> IntPtr.Zero Then
+                                                     Try
+                                                         Psapi.EmptyWorkingSet(New Kernel32.SafeObjectHandle(oprocess.Handle))
+                                                         If virtualRAMbool Then
+                                                             'SetProcessWorkingSetSize(oprocess.Handle, -1, -1)
                                                          End If
-                                                     End If
-                                                 Next
-                                             Catch ex2 As Exception
-                                             End Try
-                                         End Sub)).Wait()
+                                                     Catch ex As SEHException
+                                                     Catch ex As NullReferenceException
+                                                     Catch ex As Exception
+                                                     End Try
+                                                 End If
+                                             Next
+                                         End Sub))
+
     End Sub
 
     Public Shared Function GetCurrentMemoryUsing() As PerformanceCounter
@@ -331,30 +316,33 @@ Public Class ClearHelper
         On Error Resume Next
         RootReg.OpenSubKey(dirpath, True).SetValue(keyname, keyvalue, valuekind)
     End Sub
-    Public Shared Function GetGPUInfo() As Version
+    Public Shared Function GetGPUInfo() As Boolean
         Dim objvide As ManagementObjectSearcher = New ManagementObjectSearcher("select * from Win32_VideoController")
 
         For Each obj As ManagementObject In objvide.[Get]()
             If obj("Name").ToString().ToUpper.IndexOf("NVIDIA") <> -1 Then
-                Return Version.Parse(obj("DriverVersion").ToString)
+                Return Version.Parse(obj("DriverVersion").ToString) >= New Version("451.8.0")
             ElseIf obj("Name").ToString().ToUpper.IndexOf("AMD") <> -1 Then
-                Return Version.Parse(obj("DriverVersion").ToString)
+                Return Version.Parse(obj("DriverVersion").ToString) >= New Version("20.5.1")
             End If
         Next
-        Return Nothing
+        Return False
     End Function
     Public Shared Function EnableGPU(open As Boolean) As Boolean
         Try
             Dim x = Registry.Users
-            Dim key As RegistryKey = Registry.LocalMachine.OpenSubKey("SYSTEM\CurrentControlSet\Services\Vxd", True)
-            key.CreateSubKey("BIOS", True)
-            key = key.OpenSubKey("BIOS", True)
+            Dim key As RegistryKey = Registry.LocalMachine.CreateSubKey("SYSTEM\CurrentControlSet\Services\Vxd\BIOS", True)
             key.SetValue("CPUPriority", If(open, 1, 0), RegistryValueKind.DWord)
             key.SetValue("PCIConcur", If(open, 1, 0), RegistryValueKind.DWord)
             key.SetValue("FastDRAM", If(open, 1, 0), RegistryValueKind.DWord)
             key.SetValue("AGPConcur", If(open, 1, 0), RegistryValueKind.DWord)
-            If Program.GetOSVersion.Major >= 10 AndAlso Program.GetOSVersion.Build >= 19041 Then
-
+            key = Registry.LocalMachine.CreateSubKey("SOFTWARE\Microsoft\Direct3D\Drivers", True)
+            key.SetValue("SoftwareOnly", If(open, 0, 1), RegistryValueKind.DWord)
+            key = Registry.LocalMachine.CreateSubKey("SOFTWARE\Microsoft\DirectDraw", True)
+            key.SetValue("EmulationOnly", If(open, 0, 1), RegistryValueKind.DWord)
+            If Program.GetOSVersion.Major >= 10 AndAlso Program.GetOSVersion.Build >= 19041 AndAlso GetGPUInfo() Then
+                key = Registry.LocalMachine.CreateSubKey("SYSTEM\CurrentControlSet\Control\GraphicsDrivers", True)
+                key.SetValue("HwSchMode", If(open, 2, 1), RegistryValueKind.DWord)
             End If
             Return True
         Catch

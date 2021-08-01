@@ -17,9 +17,15 @@
                 Performance_highest.Checked = True
         End Select
     End Sub
-    Private Sub MainWindow_UnLoad(sender As Object, e As cancelEventArgs) Handles MyBase.Closing
-        e.Cancel = True
-        Hide()
+#Const RELEASE = False
+    Private Sub MainWindow_UnLoad(sender As Object, e As CancelEventArgs) Handles MyBase.Closing
+#If RELEASE Then
+          e.Cancel = True
+          Hide()
+#Else
+        Application.Exit()
+#End If
+
     End Sub
 
     Private Sub DelayControl(controls As Control, state As Boolean)
@@ -169,8 +175,8 @@
                                              End If
                                              If FormControl.GetControlCheckBoxChecked(Deleted_Prefiles_CheckedBtn) Then
                                                  FormCtrler.AppendMsg("[Memory] 正在清理...")
-                                                 'ClearHelper.ClearMemory(False)
-                                                 ClearHelper.ClearMemory(ConfigHelper.Priority_UseVirtualMemory)
+                                                 ClearHelper.ClearMemory(False)
+                                                 'ClearHelper.ClearMemory(ConfigHelper.Priority_UseVirtualMemory)
                                                  FormCtrler.AppendMsg("[Memory] 清理完成.")
                                              End If
                                              If FormControl.GetControlCheckBoxChecked(DeletedWindowsBT_WS_CheckBtn) Then

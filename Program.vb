@@ -8,10 +8,14 @@ Public Class Program
             IsSingleInstance = True
             EnableVisualStyles = True
             ShutdownStyle = ShutdownMode.AfterMainFormCloses
+            SaveMySettingsOnExit = True
         End Sub
 
         Protected Overrides Sub OnCreateMainForm()
             MainForm = New MainWindow
+        End Sub
+        Protected Overrides Sub OnShutdown()
+            ConfigHelper.DymSaveAndReload()
         End Sub
     End Class
     Public Shared Function GetOSVersion() As Version
