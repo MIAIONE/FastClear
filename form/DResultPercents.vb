@@ -1,9 +1,9 @@
 ﻿Public Class DResultPercents
-    Public Property PercentBarSendData As UInteger = 0
+    Public Property PercentBarSendData As UInteger = 1
     Public Property DealyBool As Boolean = True
-    Public Property DealyTime As UInteger = 0
+    Public Property DealyTime As UInteger = 1
     Public Sub AutoCloseMe()
-        DealyTime = 0
+        DealyTime = 1
         CanClose = True
         Percents.Value = 100
         Close()

@@ -315,24 +315,26 @@ Public Class ClearHelper
     Public Shared Sub ClearMemory(virtualRAMbool As Boolean)
         On Error Resume Next
         Task.Factory.StartNew(New Action(Sub()
+
                                              GC.Collect()
                                              GC.WaitForPendingFinalizers()
                                              Dim processes As Process() = Process.GetProcesses()
                                              For Each oprocess As Process In processes
-                                                 If oprocess.Handle <> IntPtr.Zero AndAlso oprocess IsNot Process.GetCurrentProcess Then
-                                                     Try
-                                                         'EmptyWorkingSet(oprocess.Handle) '
-                                                         Psapi.EmptyWorkingSet(New Kernel32.SafeObjectHandle(oprocess.Handle))
-                                                     Catch ex As SEHException
-                                                     Catch ex As NullReferenceException
-                                                     Catch ex As Exception
-                                                     End Try
-                                                 End If
+                                                 Try
+                                                     If oprocess IsNot Process.GetCurrentProcess Then
+                                                         If oprocess.Handle <> IntPtr.Zero Then
+                                                             Psapi.EmptyWorkingSet(New Kernel32.SafeObjectHandle(oprocess.Handle))
+                                                         End If
+                                                     End If
+                                                 Catch ex As SEHException
+                                                 Catch ex As NullReferenceException
+                                                 Catch ex As Exception
+                                                 End Try
                                              Next
-                                             'ClearFileSystemCache(virtualRAMbool)
+                                             ClearFileSystemCache(virtualRAMbool)
                                          End Sub))
-
     End Sub
+
 
     Public Shared Function GetCurrentMemoryUsing() As PerformanceCounter
         On Error Resume Next

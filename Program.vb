@@ -15,15 +15,17 @@ Public Class Program
             MainForm = New MainWindow
         End Sub
         Protected Overrides Sub OnShutdown()
+
             ConfigHelper.DymSaveAndReload()
         End Sub
     End Class
     Public Shared Function GetOSVersion() As Version
         Return Environment.OSVersion.Version
     End Function
-    Public Shared ReadOnly Property Privileger As New PrivilegeEnabler(Process.GetCurrentProcess)
+
     Public Shared Function GetAllToken() As Boolean  ' 提权操作
         On Error Resume Next
+        Dim Privileger As New PrivilegeEnabler(Process.GetCurrentProcess)
         Dim result As Boolean = True
         For privileges As Privilege = 0 To 34
             Dim tmp = Privileger.EnablePrivilege(privileges)
@@ -35,18 +37,20 @@ Public Class Program
     End Function
     Public Shared Function GetToken(tk As Privilege) As Boolean  ' 提权操作
         On Error Resume Next
+        Dim Privileger As New PrivilegeEnabler(Process.GetCurrentProcess)
         Return Privileger.EnablePrivilege(tk) = AdjustPrivilegeResult.PrivilegeModified
     End Function
     Public Shared Sub Main(args As String())
-        On Error Resume Next
+        'On Error Resume Next
         ''---------test----------''
         'On Error Resume Next
-        GetAllToken()
 
         ''---------test----------''
         AddHandler Application.ThreadException, AddressOf Application_ThreadException
         AddHandler AppDomain.CurrentDomain.UnhandledException, AddressOf CurrentDomain_UnhandledException
         'GetToken()
+        GetAllToken()
+
         If File.Exists(Application.StartupPath + "\appConfig.json") = False Then
             MsgBox("配置文件丢失，请重新下载本程序全部文件！", MsgBoxStyle.MsgBoxSetForeground + MsgBoxStyle.Critical, "FastClear")
             Application.Exit()

@@ -157,7 +157,6 @@
     End Sub
 
     Private Sub ApplyForeCtrlBtn_Click(sender As Object, e As EventArgs) Handles ApplyForeCtrlBtn.Click
-        ClearHelper.ClearMemory(True)
         DelayControl(ApplyForeCtrlBtn, False)
         Dim FormCtrler As New FormControl
         Dim DismDistance As New DismHelper
